@@ -1,0 +1,1017 @@
+
+
+## AppPot REST API規約
+1. プロトコルはHTTP/HTTPSとする
+2. GETリクエストの場合はクエリ文字列を受け入れるものとする
+3. POSTリクエストの場合はURLエンコーディングを行うものとする
+4. POSTリクエストは基本的にJSON形式とする
+5. レスポンスはバイナリデータ以外場合はJSON形式とする
+6. 全てのレスポンスオブジェクトにはAPI実行結果のステータスを表す **status** プロパティと、ステータスの詳細情報を表す **description** プロパティを持つものとする
+
+
+## 公開API一覧
+カテゴリ   | API                                       | リクエスト                       | レスポンス                   | 説明
+---------- | ----------------------------------------- | -------------------------------- | ---------------------------- | ---
+ユーザ管理 | [Authentication](#authentication)         | ユーザID、パスワード             | ユーザ情報                   | 登録されたアカウント情報をもとに認証処理を実行します。
+           | [Logout](#logout)                         | ユーザトークン                   | -                            | 指定されたユーザのセッションを破棄し、システムからログアウトします。
+           | [DeviceRegistration](#deviceregistration) | デバイス情報                     | -                            | 端末情報をデバイス管理用のマスタに登録します。 
+           | [GetAnonymousToken](#getanonymoustoken)    | アプリケーションキー、デバイスID | 匿名トークン                 | ログインの必要がないAPIのために使われる匿名トークンを返します。
+データ管理 | [CreateAppData](#createappdata)           | テーブルスキーマ情報のリスト     | -                            | アプリケーションでスキーマ定義したテーブルをサーバーサイドに作成します。
+           | [AddNewData](#addnewdata)                 | レコードオブジェクト             | 登録レコードのサロゲートキー | アプリケーションデータに新規レコードを挿入します。  複数レコードを一括で挿入することも可能です。
+           | [UpdateData](#updatedata)                 | レコードオブジェクト             | 更新レコードのサロゲートキー | アプリケーションデータのレコードを更新します。複数レコードを一括で更新することも可能です。 
+           | [DeleteData](#deletedata)                 | サロゲートキー                   | 削除レコードのサロゲートキー | アプリケーションデータの削除を行います。 複数レコードを一括で削除することも可能です。
+           | [CheckAppData](#checkappdata)             | アプリケーションID               | 存在したらYES、しなければNO  | 指定したアプリケーションIDとアプリケーションバージョンのデータベースがサーバーサイドに存在するかどうかをチェックします。
+ログ管理   | [Log](#log)                               | メッセージ                       | -                            | 指定されたメッセージをサーバサイドのログに出力します。
+           | [GetLogLevel](#getloglevel)               | -                                | ログレベル                   | 現在のログレベルを取得します。
+
+
+
+## 処理シーケンス概要
+
+ここでは全体の処理の流れを説明します。
+![概要シーケンス](./arch_images/seq1.png)
+
+1. GetAnonymouseToken
+アプリキーを使って、匿名ユーザとして認証を行います。
+
+3. CreateAppDb
+定義したValue Objectを元にサーバー側にデータベースを作成します。
+
+2. Login
+ユーザーのID、パスワードを
+
+4. GetData/UpdateData/AddNewData/Delete
+
+
+***
+
+#### Authentication
+AppPotにて管理されているユーザ情報を元に認証処理を行います。  
+認証に成功すればユーザ情報とユーザトークンを返します。  
+失敗した場合はエラーステータスをもって通知します。
+
+##### 処理シーケンス
+1. 必須パラメータが指定されていない、または存在しない時、エラーを返します。
+2. アカウントをチェックし、存在しない場合はエラーを返します。
+3. もし加入者が存在するならば、トークンを生成します。
+4. オブジェクト情報を返します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/Login
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+username    | ユーザ名
+password    | パスワード
+appId       | アプリケーションID
+appVersion  | アプリケーションのバージョン
+deviceUDID  | デバイスID
+authToken   | ユーザトークン
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+authInfo    | 認証したユーザ情報(ユーザトークンが含まれる)
+
+##### リクエストサンプル
+```
+{
+  "username": "sogo@stew.com",
+  "password": "123456",
+  "appId": "sogo.app",
+  "appVersion": "1.0",
+  "authToken":"d46626e05c4e4fa38cc8bbd30ba98cbd",  
+  "deviceUDID": "E9J5J94J-2C5B-4F97-BC61-90284830E1DA",
+  "isPush": "false"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+   "status": "OK",
+   "description": null,
+   "authInfor": {
+      "userTokens": "8560ba5e81af4279a0c3bfd3d1f6827b",
+      "validTime": 18000000,
+      "userId": 20,
+      "userInfo": {
+            "account":"admin@stew.com",
+            "fistName":"ryohei",
+          "lastName":"sogo"
+      },
+      "groupsAndRoles": [
+         {
+            "groupId": 12,
+            "groupName": "アーバーンクローゼット",
+            "roleName": "User",
+            "roleId": 4
+         }
+      ]
+   }
+}
+```
+
+***
+
+#### Logout
+指定されたユーザのセッションを破棄し、システムからログアウトします。 
+
+##### 処理シーケンス
+1. ユーザーセッションが存在しない、または既に破棄されている場合はエラーを返します。
+2. 指定されたユーザトークンに該当するユーザセッションを破棄します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/Logout
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+token       | ユーザトークン
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+(なし)      | -
+
+##### リクエストサンプル
+```
+{
+  "token":"a294e9de50e14cf0b3e04f19d3f4b790"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+  "status”:"OK",
+  "description":"",
+}
+```
+
+***
+#### DeviceRegistration
+端末情報をデバイス管理用のマスタに登録します。  
+:exclamation: 管理したデバイス情報は何に使われるのでしょうか？
+
+##### 処理シーケンス
+1. 同一の端末情報が既に登録されている場合はエラーを返します。
+2. リクエストされた端末情報を登録します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/DeviceRegistration
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+deviceToken | 開発者がアップルに登録したトークン
+deviceUDID  | デバイスID
+osType      | オペレーティングシステムタイプ(iOS/Android)
+deviceName  | デバイス名
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+(なし)      | -
+
+##### リクエストサンプル
+```
+{
+  "deviceToken": "device token 1",
+  "appId": "sogo.app",
+  "osType": "iOS",
+  "deviceName": "iPhone 4",
+  "appVersion": "1.0",
+  "deviceUDID": "E9J5J94J-2C5B-4F97-BC61-90284830E1DA",
+  "authToken": "5231cf92e4b07a1a72f2d27c"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+  "status": "error"
+  "description": "The device already registered for this device and app"
+}
+```
+
+***
+
+#### GetAnonymousToken
+ログインの必要がないAPIのために使われる匿名トークンを返します。
+
+##### 処理シーケンス
+1. 匿名トークンを生成して返します
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/GetAnonymousToken
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+---------- | ----
+appKey     | アプリケーションキー
+deviceUDID | デバイスID
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+result 　   | 匿名トークン
+
+##### リクエストサンプル
+```
+{
+  "appKey": "9c1c1e3e7e4a402a8ab8896d6d9fc65a",
+  "deviceUDID": "E9J5J94J-2C5B-4F97-BC61-90284830E1DA"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+  status: "OK"
+  description: null
+  results: "e0aec9d8fc834456bc55dc18f2b99a64"
+}
+```
+
+***
+
+
+### データ管理
+サーバーサイドでアプリケーションデータを管理するストレージを用意します。
+ストレージにはRDBMSを利用します。
+利用者は、サーバーサイドのRDBを意識する事なく、クライアントサイドのストレージ操作だけでサーバーサイドのデータを管理できます。
+
+* データ参照のスコープ  
+:exclamation: スコープについての説明する
+
+* サロゲートキーについて  
+:exclamation: サロゲートキーについての説明する
+
+* 楽観的排他について  
+:exclamation: 楽観的排他スコープについての説明する
+
+***
+
+#### CreateAppData
+アプリケーションでスキーマ定義したテーブルをサーバーサイドに作成します。  
+アプリケーションはサーバーサイドで作業する事なく、クライアントSDK側でスキーマを定義しておくだけで、本API呼び出し時に自動的にテーブルが生成されます。 
+
+##### 処理シーケンス
+1. ユーザセッションと対象アプリケーションの妥当性を検証し、不正な場合はエラーを返します。
+2. 指定されたアプリケーションテーブルのスキーマ定義が不正であればエラーを返します。
+3. isResetDatabaseパラメータがtrueの場合は、常にテーブルを作成します。
+4. isResetDatabaseパラメータがfalseの場合は、テーブルが存在していなければテーブルを作成します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/CreateAppData
+```
+
+##### リクエストパラメータ
+パラメータ名       | 説明
+---------------- | ----
+isResetDatabase  | true : 常にテーブルを作り直す / false : 存在しなければ作成する
+tables           | テーブルスキーマ情報のリスト（テーブル情報/各項目情報）
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+(なし) 　   | -
+
+##### リクエストサンプル
+```
+{
+  "appId":"app.thai",
+  "appVersion":"1.0",
+  "authToken": "d46626e05c4e4fa38cc8bbd30ba98cbd",
+  "isResetDatabase": true,
+   "tables":[
+      {
+         "primary_key":"objectId",
+         "name":"department",
+         "columns":[
+            {
+               "colName":"UpdateTime",
+               "type":"integer"
+            },
+            {
+               "colName":"CreateTime",
+               "type":"integer"
+            },
+            {
+               "colName":"isHave",
+               "type":"integer"
+            },
+            {
+               "colName":"nameOfDepart",
+               "type":"varchar"
+            },
+            {
+               "colName":"objectId",
+               "type":"varchar"
+            },
+            {
+               "colName":"scopeType",
+               "type":"varchar"
+            }
+         ]
+      }
+   ]
+}
+```
+
+##### レスポンスサンプル
+```
+{
+    "status": "OK",
+    "description": null,
+}
+```
+
+***
+#### GetData
+レコードのサロゲートキー指定でレコードを取得します。  
+サロゲートキーを指定しなかった場合は、任意の検索条件を指定して複数件のデータを取得します。
+
+##### 処理シーケンス
+1. ユーザセッションと対象アプリケーションの妥当性を検証し、不正な場合はエラーを返します。
+2. サロゲートキーが指定されている場合は、そのキーを元に検索条件式を生成します。
+3. サロゲートキーが指定されていない場合は、リクエストされた検索条件で条件式を生成します。
+4. ユーザーのアクセスできるスコープの条件を検索条件式に付加します。
+5. 対象のテーブルを上記作成の検索条件で検索します。
+6. 検索結果を返します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/GetData
+```
+
+##### リクエストパラメータ
+パラメータ名      | 説明
+--------------- | ----
+objectName      | テーブル名
+recordId        | サロゲートキー
+maxRecord       | ページングする場合の1ページあたりの最大レコード件数
+pageIndex       | ページングする場合の取得するページインデックス
+sortConditions  | ソート条件を表すオブジェクト
+joinConditions  | 結合条件を表すオブジェクト
+whereConditions | 検索条件を表すオブジェクト
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+results     | 検索結果のレコードリスト
+counter     | 検索にヒット件数
+totalPage   | ページングした場合のトータルページ数
+pageIndex   | ページングした場合の取得したページインデックス
+
+##### リクエストサンプル
+```
+{
+    "maxRecord": 1000,
+    "token": "b92a50c2f7cb499398c957da385bf10b",
+    "pageIndex": 1,
+    "objectName": "casereport",
+   "condition":
+    {
+     "sortConditions": [
+           {
+           "conditionValue": 1, // 1: ASC, 2: DESC
+           "columnName": "UpdateTime"
+         }
+     ],
+     "whereConditions": [
+       {
+         "searchConditions": [
+             {
+                 "type": 1, // 1: equal, 2: not equal, 3: like, 4: greater than, 
+                            // 5: greater than or equal, 6: less than, 
+                            // 7: less than or equal, 8: in
+                 "columnName": "age",
+                 "conditionValue": ["2"]
+             }
+          ],
+          “type”: “AND” //”AND”: And query condition, “OR”: Or query condition
+        },
+        {
+         "searchConditions": [
+             {
+                 "type": 1,
+                 "columnName": "scopeType",
+                 "conditionValue": ["2"]
+             }
+          ],
+          “type”: “OR”
+        }
+      ],
+
+      "joinConditions": [
+          {
+              "joinType": 1, //1: Inner join
+              "joinObjectName": "follow",
+              "joinColumn": "caseReportID",
+              "baseColumn": "objectId",
+              "whereConditions": [
+                {
+                  "searchConditions": [
+                    {
+                       "type": 1,
+                       "columnName": "scopeType",
+                       "conditionValue": ["2"]
+                    }             
+                  ],
+                  "type":"AND"
+                },
+                {
+                   "searchConditions": [
+                     {
+                         "type": 1,
+                         "columnName": "date",
+                         "conditionValue": ["1392476400"]
+                     },
+                     {
+                         "type": 1,
+                         "columnName": "maxBloodPressure",
+                         "conditionValue": ["222"]
+                     }                    
+                   ],
+                   "type": "OR"
+                  }                               
+              ]
+         }
+    ],    
+     "scope":1 // 1: User, 2: Group, 3: All
+     }
+}
+```
+
+##### レスポンスサンプル
+```
+{
+    "status":"OK",
+    "results":[
+    {
+        "record":[
+            {
+                "name":"isUsingLockForUpdate",
+                "value":"0.0"
+            },
+            {
+                "name":"scopeType",
+                "value":"1.0"
+            },
+            {
+                "name":"createTime",
+                "value":"1.39270006E9"
+            },
+            {
+                "name":"updateTime",
+                "value":"1.3927091E9"
+            },
+            {
+                "name":"memo",
+                "value":"ssss"
+            },
+            {
+                "name":"isFollow",
+                "value":"1.0"
+            },
+            {
+                "name":"patientName",
+                "value":""
+            },
+            {
+                "name":"persistentType",
+                "value":"0.0"
+            },
+            {
+                "name":"scopeTypeForAutoRefresh",
+                "value":"1.0"
+            },
+            {
+                "name":"boolTest",
+                "value":"0.0"
+            },
+            {
+                "name":"lifeSpan",
+                "value":"2.0"
+            },
+            {
+                "name":"objectId",
+                "value":"CaseReport_1392558948933"
+            },
+            {
+                "name":"syncStatus",
+                "value":"0"
+            },
+            {
+                "name":"gender",
+                "value":"0.0"
+            },
+            {
+                "name":"isAutoRefresh",
+                "value":"0.0"
+            },
+            {
+                "name":"age",
+                "value":"2.0"
+            },
+            {
+                "name":"autoRefreshInterval",
+                "value":"600.0"
+            },
+            {
+                "name":"createUserId",
+                "value":"3.0"
+            },
+            {
+                "name":"groupIds",
+                "value":null
+            },
+            {
+                "name":"serverCreateTime",
+                "value":"2014-02-16T22:55:48.932+09:00"
+            },
+            {
+                "name":"serverUpdateTime",
+                "value":"2014-02-19T21:11:21.852+09:00"
+            }
+        ]
+    }
+    ],
+    "counter":1,
+    "totalPage":1,
+    "pageIndex":1,
+    "description":null
+}
+```
+
+***
+#### AddNewData
+アプリケーションデータに新規レコードを挿入します。   
+複数レコードを一括で挿入することも可能です。
+
+##### 処理シーケンス
+1. ユーザセッションと対象アプリケーションの妥当性を検証し、不正な場合はエラーを返します。
+2. 登録データに不正なデータ構成がないかを検証し、不正な場合はエラーを返します。
+3. データを対象テーブルに登録します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/AddNewData  
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+objectName  | テーブル名
+data        | 登録するレコードオブジェクト、またはそのリスト
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+---------- | ----
+results    | 挿入したレコードのサロゲートキーと更新時間、またはそのリスト
+
+##### リクエストサンプル
+```
+{
+"data": [
+  {"record":[
+     {
+       "value":"sdiufhisdufhksdf",
+       "name":"objectId"
+     },
+    {
+      "value":"1390085336544",
+      "name":"CreateTime"
+    },
+    {
+      "value":"123546512.1245",
+      "name":"UpdateTime"
+    },
+    {
+      "value":"This is depart 1",
+      "name":"nameOfDepart"
+    },
+    {
+      "value":"1",
+      "name":"isHave"
+    },
+    {
+      "value":"2", //1: User, 2: Group, 3: All
+      "name":"scopeType"
+    },
+    {
+      "value":"1",
+      "name":"groupIds"
+    }
+  ]
+},
+  {"record":[
+     {
+       "value":null,
+       "name":"objectId"
+     },
+    {
+      "value":"1390085356736544",
+      "name":"CreateTime"
+    },
+    {
+      "value":"1235465167821245",
+      "name":"UpdateTime"
+    },
+    {
+      "value":null,
+      "name":"nameOfDepart"
+    },
+    {
+      "value":"2",
+      "name":"isHave"
+    },
+    {
+      "value":"2",
+      "name":"scopeType"
+    },
+    {
+      "value":"2",
+      "name":"groupIds"
+    }
+  ]
+}
+],
+  "token":"36532aad619a4b95ad4dbd63454e5ff1",
+  "objectName":"department"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+    "status": "OK",
+    "description": null,
+    "results": [
+        {
+            "objectId": "department_1390463076564",
+            "serverCreateTime": "2014-01-23T14:44:36.516+07:00",
+            "serverUpdateTime": "2014-01-23T14:50:43.035+07:00"
+        },
+        {
+            "objectId": "department_1390463076611",
+            "serverCreateTime": "2014-01-23T14:44:36.567+07:00",
+            "serverUpdateTime": "2014-01-23T14:50:43.067+07:00"
+        }
+    ]
+}
+```
+
+
+***
+#### UpdateData
+アプリケーションデータのレコードを更新します。  
+複数レコードを一括で更新することも可能です。
+
+##### 処理シーケンス
+1. ユーザセッションと対象アプリケーションの妥当性を検証し、不正な場合はエラーを返します。
+2. 登録データに不正なデータ構成がないかを検証し、不正な場合はエラーを返します。
+3. 楽観的排他チェックを実施、更新が競合していればエラーを返します。
+4. 対象テーブルのデータを更新します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/UpdateData
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+objectName  | テーブル名
+data        | 更新するレコードオブジェクト、またはそのリスト
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+---------- | ----
+results    | 更新したレコードのサロゲートキーと更新時間、またはそのリスト
+
+##### リクエストサンプル
+```
+{
+"data": [
+   {"record":[
+      {
+        "value":"department_1390463076564",
+        "name":"objectId"
+      },
+     {
+       "value":"1390085336544",
+       "name":"CreateTime"
+     },
+     {
+       "value":"1235465121245",
+       "name":"UpdateTime"
+     },
+     {
+       "value":"Edited object 44",
+       "name":"nameOfDepart"
+     },
+     {
+       "value":"1",
+       "name":"isHave"
+     },
+     {
+       "value":"2014-01-23T14:44:36.516+07:00",
+       "name":"serverUpdateTime"
+     }
+   ]
+},
+   {"record":[
+      {
+        "value":"department_1390463076611",
+        "name":"objectId"
+      },
+     {
+       "value":"1390085356736544",
+       "name":"CreateTime"
+     },
+     {
+       "value":"1235465167821245",
+       "name":"UpdateTime"
+     },
+     {
+       "value":"Edited object",
+       "name":"nameOfDepart"
+     },
+     {
+       "value":"2",
+       "name":"isHave"
+     },
+     {
+       "value":"2014-01-23T14:44:36.567+07:00",
+       "name":"serverUpdateTime"
+     }
+   ]
+}
+],
+   "token":"66fecf82dfbf4042a331e43da79bcfbb",
+   "objectName":"department"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+    "status": "OK",
+    "description": null,
+    "results": [
+        {
+            "objectId": "department_1390463076564",
+            "serverCreateTime": "2014-01-23T14:44:36.516+07:00",
+            "serverUpdateTime": "2014-01-23T14:50:43.035+07:00"
+        },
+        {
+            "objectId": "department_1390463076611",
+            "serverCreateTime": "2014-01-23T14:44:36.567+07:00",
+            "serverUpdateTime": "2014-01-23T14:50:43.067+07:00"
+        }
+    ]
+}
+```
+
+
+
+***
+#### DeleteData
+サロゲートキーによるアプリケーションデータの削除を行います。 
+複数レコードを一括で削除することも可能です。
+
+##### 処理シーケンス
+1. ユーザセッションと対象アプリケーションの妥当性を検証し、不正な場合はエラーを返します。
+2. 楽観的排他チェックを実施、更新が競合していればエラーを返します。
+3. 対象テーブルのデータを削除します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/DeleteData
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+objectName  | テーブル名
+objectIds   | 削除対象レコードのサロゲートキー、またはそのリスト
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+---------- | ----
+results    | 削除したレコードのサロゲートキーと更新時間、またはそのリスト
+
+##### リクエストサンプル
+```
+{
+   "token":"f0aef39a0f4a4e5f8b0be9763633a14f",
+   "objectIds":[
+       {
+            "objectId": "department_1390444506968",
+            "serverUpdateTime": "2014-01-23T14:33:26.152+07:00"
+        },
+        {
+            "objectId": "department_1390444507770",
+            "serverUpdateTime": "2014-01-23T14:33:26.222+07:00"
+        }
+   ],
+   "objectName":"department"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+    "status": "OK",
+    "description": null,
+    "results": [
+        {
+            "objectId": "department_1390444506118",
+            "serverCreateTime": "2014-01-23T09:35:06.044+07:00",
+            "serverUpdateTime": "2014-01-23T09:35:06.044+07:00"
+        },
+        {
+            "objectId": "department_1390444507490",
+            "serverCreateTime": "2014-01-23T09:35:07.489+07:00",
+            "serverUpdateTime": "2014-01-23T09:35:07.489+07:00"
+        }
+    ]
+}
+```
+
+
+***
+#### CheckAppData
+指定したアプリケーションIDとアプリケーションバージョンのデータベースがサーバーサイドに存在するかどうかをチェックします。  
+存在した場合、サーバーはYESを返します。  
+まだ作られていなかった場合はNOを返します。  
+
+##### 処理シーケンス
+1. 対象のアプリケーションのデータベースの存在を確認
+2. 存在していればYESを、存在していなければNOを返す 
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/CheckExistenceOfAppDatabase
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+appId       | アプリケーションID  
+appVersion  | アプリケーションバージョン
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+---------- | ----
+status     | 存在していればYES、存在していなければNO
+
+##### リクエストサンプル
+```
+{
+    "appId": "app.trinh",
+    "appVersion": "1.0"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+    "status": "YES",
+    "description": "",
+    "results": null
+}
+```
+
+***
+
+
+
+### ログ管理
+* ログの出力先と確認方法  
+:exclamation: ログの出力先と確認方法について説明
+
+* ログレベル  
+:exclamation: ログレベルの説明。
+
+* ログタイプ  
+:exclamation: ログタイプの説明。
+
+***
+
+#### Log
+指定されたメッセージをサーバサイドのログに出力します。
+
+##### 処理シーケンス
+1. ユーザセッションと対象アプリケーションの妥当性を検証し、不正な場合エラーを返します。  
+2. ログを出力します。
+
+##### URL
+```
+[POST] /{コンテキストルート}/api/Log
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+type        | ログタイプ(error:1、event:2)        
+message     | メッセージ
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+(なし)      | -
+
+##### リクエストサンプル
+```
+{
+  "message": "this is first message",
+  "token": "789w34uhjsd78236jhg",
+  "appId": "appid",
+  "appVersion": "1.0",
+  "deviceUDID": "E9J5J94J-2C5B-4F97-BC61-90284830E1DA",
+  "type": "ERROR"
+}
+```
+
+##### レスポンスサンプル
+```
+{
+  “status”:”OK”
+}
+```
+
+***
+
+#### GetLogLevel
+現在アプリケーションに設定されているログレベルを取得します。
+
+##### 処理シーケンス
+1. ログレベルを取得し返します。
+
+##### URL
+```
+[GET] /{コンテキストルート}/api/GetLogLevel/{token}
+```
+
+##### リクエストパラメータ
+パラメータ名 | 説明
+----------- | ----
+(なし)      | -
+
+##### レスポンスプロパティ
+プロパティ名 | 説明
+----------- | ----
+result      | 認証したユーザ情報(ユーザトークンが含まれる)
+
+##### レスポンスサンプル
+```
+{
+  “status”:”OK”,
+  “result”:”ERROR”
+  “description”:””
+}
+```
+
+
+## エラーコード一覧
+コード  | メッセージ | 発生元
+------ | --------- | -----
+コード1 | インプットパラメータが必要です。 | Authentication
+コード1 | ユーザが存在しません。 トークンが存在しているケースのレスポンスですが、それがユーザトークンではありません(これは匿名トークンでありえます)。 | Authentication
+コード1 | ユーザ名、またはパスワードが不正です。- ユーザ名/パスワードのペアが存在していないケースのレスポンスです。 | Authentication
+コード1 | AppIDとUserIDが合致しません。 | 全般
+コード1 | トークンが存在しません – データベースにトークンが存在しないケースのレスポンスです。 | 全般
+コード1 | トークンの有効期限が切れています。 | 全般
+コード1 | ログインする前にあなたのデバイスを登録してください。 | Authentication
+コード1 | アプリID、またはアプリバージョンが不正です。 | 全般
+コード1 | 削除処理のユーザーセッション中に問題が発生しました。 | DeleteData
+コード1 | そのデバイスはこのデバイスとアプリのために既に登録済みです。 | DeviceRegistration
+コード1 | デバイス登録中に問題が発生しました。 | DeviceRegistration
+コード1 | そのIDが付けられたアプリは存在しません。 | 全般
+コード1 | アプリを作成する事が出来ませんでした。 | CreateaAppData
+コード1 | 入力したデータは無効です。 | AddNewData
+コード1 | テーブルが存在しません。 | AddNewData/UpdateData/DeleteData/GetData
+コード1 | 要求したテーブルが空か、または存在しません。| AddNewData/UpdateData/DeleteData/GetData
+コード1 | データをポストする事ができません。 | 全般
+コード1 | アプリデータベースが定義されていません。 | AddNewData/UpdateData/DeleteData/GetData
+コード1 | プロセスエラー | 全般
+コード1 | アプリはユーザが所属するグループに割当られていません。 | 全般
+コード1 | レコードは存在していないか、データがブロックされています。 | UpdateData/DeleteData
+コード1 | ユーザ情報と認証トークンが合致しません。 | 全般
+コード1 | デバイスUDIDと認証トークンが合致しません。 | 全般
+コード1 | AppID、アプリバージョンと認証トークンが合致しません。 | 全般
+  

@@ -1,0 +1,890 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>APQuery Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AppPot SDK for iOS </a></h1>
+				<a id="developerHome" href="../index.html">NC Design &amp; Consulting Co., Ltd.</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">APQuery Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/condition">&nbsp;&nbsp;&nbsp;&nbsp;condition</option>
+	
+	<option value="//api/name/isCachingResult">&nbsp;&nbsp;&nbsp;&nbsp;isCachingResult</option>
+	
+	<option value="//api/name/maxResult">&nbsp;&nbsp;&nbsp;&nbsp;maxResult</option>
+	
+	<option value="//api/name/pageIndex">&nbsp;&nbsp;&nbsp;&nbsp;pageIndex</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/queryWithClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ queryWithClass:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/refreshCache:">&nbsp;&nbsp;&nbsp;&nbsp;- refreshCache:</option>
+	
+	<option value="//api/name/refreshCacheWithBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- refreshCacheWithBlock:</option>
+	
+	<option value="//api/name/resultSet:">&nbsp;&nbsp;&nbsp;&nbsp;- resultSet:</option>
+	
+	<option value="//api/name/resultSetWithBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- resultSetWithBlock:</option>
+	
+	<option value="//api/name/scopeType:">&nbsp;&nbsp;&nbsp;&nbsp;- scopeType:</option>
+	
+	<option value="//api/name/sortByKey:sortType:">&nbsp;&nbsp;&nbsp;&nbsp;- sortByKey:sortType:</option>
+	
+	<option value="//api/name/whereKey:equalTo:">&nbsp;&nbsp;&nbsp;&nbsp;- whereKey:equalTo:</option>
+	
+	<option value="//api/name/whereKey:like:">&nbsp;&nbsp;&nbsp;&nbsp;- whereKey:like:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/condition">condition</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCachingResult">isCachingResult</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxResult">maxResult</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pageIndex">pageIndex</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/queryWithClass:">queryWithClass:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshCache:">refreshCache:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshCacheWithBlock:">refreshCacheWithBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resultSet:">resultSet:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resultSetWithBlock:">resultSetWithBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scopeType:">scopeType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sortByKey:sortType:">sortByKey:sortType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/whereKey:equalTo:">whereKey:equalTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/whereKey:like:">whereKey:like:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="APQuery Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">APQuery Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">APQuery copy.m<br />APQuery.h<br />APQuery.m</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/queryWithClass:">+&nbsp;queryWithClass:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/condition">&nbsp;&nbsp;condition</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCachingResult">&nbsp;&nbsp;isCachingResult</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/maxResult">&nbsp;&nbsp;maxResult</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pageIndex">&nbsp;&nbsp;pageIndex</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resultSetWithBlock:">&ndash;&nbsp;resultSetWithBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resultSet:">&ndash;&nbsp;resultSet:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/refreshCacheWithBlock:">&ndash;&nbsp;refreshCacheWithBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/refreshCache:">&ndash;&nbsp;refreshCache:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/whereKey:equalTo:">&ndash;&nbsp;whereKey:equalTo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/whereKey:like:">&ndash;&nbsp;whereKey:like:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sortByKey:sortType:">&ndash;&nbsp;sortByKey:sortType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scopeType:">&ndash;&nbsp;scopeType:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/condition" title="condition"></a>
+	<h3 class="subsubtitle method-title">condition</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクエリが保持している条件。
+@property condition</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary *condition</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCachingResult" title="isCachingResult"></a>
+	<h3 class="subsubtitle method-title">isCachingResult</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクラスが結果としてのデータのリストをキャッシュするか否かを指定する。
+@property isCachingResult</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL isCachingResult</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/maxResult" title="maxResult"></a>
+	<h3 class="subsubtitle method-title">maxResult</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>取得するデータの最大件数。
+@property maxResult</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) int maxResult</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pageIndex" title="pageIndex"></a>
+	<h3 class="subsubtitle method-title">pageIndex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>同じ条件で何個目のデータセットを取得するかを指定。
+@property pageIndex</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) int pageIndex</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/queryWithClass:" title="queryWithClass:"></a>
+	<h3 class="subsubtitle method-title">queryWithClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initalizes a query with <a href="#//api/name/class">class</a>
+@property _<a href="#//api/name/class">class</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (APQuery *)queryWithClass:(Class)<em>_class</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/refreshCache:" title="refreshCache:"></a>
+	<h3 class="subsubtitle method-title">refreshCache:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクエリオブジェクトが保持しているキャッシュデータを最新のものにする。この処理は同期で実行されるので時間がかかる可能性がある。
+@param APErrorBlock</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)refreshCache:(NSError **)<em>error</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/refreshCacheWithBlock:" title="refreshCacheWithBlock:"></a>
+	<h3 class="subsubtitle method-title">refreshCacheWithBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクエリオブジェクトが保持しているキャッシュデータを最新のものにする。この処理は非同期で実行される。
+@param APErrorBlock</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)refreshCacheWithBlock:(APErrorBlock)<em>block</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resultSet:" title="resultSet:"></a>
+	<h3 class="subsubtitle method-title">resultSet:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定した条件でデータを取得する。データのキャッシュが有効で、キャッシュが存在する場合はそれを返す。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)resultSet:(NSError **)<em>error</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resultSetWithBlock:" title="resultSetWithBlock:"></a>
+	<h3 class="subsubtitle method-title">resultSetWithBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定した条件でデータを取得する。データのキャッシュが有効で、キャッシュが存在する場合はそれを返す。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)resultSetWithBlock:(APArrayResultBlock)<em>block</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scopeType:" title="scopeType:"></a>
+	<h3 class="subsubtitle method-title">scopeType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Provide a way to other people can access this object
+@property</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)scopeType:(SCOPE_TYPE)<em>scopeType</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sortByKey:sortType:" title="sortByKey:sortType:"></a>
+	<h3 class="subsubtitle method-title">sortByKey:sortType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Filter response data
+@property</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sortByKey:(NSString *)<em>columnKey</em> sortType:(SORT_TYPE)<em>sortType</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/whereKey:equalTo:" title="whereKey:equalTo:"></a>
+	<h3 class="subsubtitle method-title">whereKey:equalTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refresh with <a href="#//api/name/condition">condition</a> equal
+@property</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)whereKey:(NSString *)<em>columnKey</em> equalTo:(id)<em>value</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/whereKey:like:" title="whereKey:like:"></a>
+	<h3 class="subsubtitle method-title">whereKey:like:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refresh with <a href="#//api/name/condition">condition</a> like
+@property</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)whereKey:(NSString *)<em>columnKey</em> like:(NSString *)<em>value</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 NC Design &amp; Consulting Co., Ltd.. All rights reserved. (Last updated: 2014-02-23)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,3123 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>APEntityManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AppPot SDK for iOS </a></h1>
+				<a id="developerHome" href="../index.html">NC Design &amp; Consulting Co., Ltd.</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">APEntityManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/convertToObjectFromDictionary:ofClass:">&nbsp;&nbsp;&nbsp;&nbsp;- convertToObjectFromDictionary:ofClass:</option>
+	
+	<option value="//api/name/count:">&nbsp;&nbsp;&nbsp;&nbsp;- count:</option>
+	
+	<option value="//api/name/decryptColumsAtTable:">&nbsp;&nbsp;&nbsp;&nbsp;- decryptColumsAtTable:</option>
+	
+	<option value="//api/name/decryptDataForColumn:atTable:">&nbsp;&nbsp;&nbsp;&nbsp;- decryptDataForColumn:atTable:</option>
+	
+	<option value="//api/name/deleteAllDataFor:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteAllDataFor:</option>
+	
+	<option value="//api/name/deleteInstance:error:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteInstance:error:</option>
+	
+	<option value="//api/name/deleteInstance:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteInstance:withBlock:</option>
+	
+	<option value="//api/name/deleteInstanceFromLocal:error:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteInstanceFromLocal:error:</option>
+	
+	<option value="//api/name/deleteInstanceFromServer:error:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteInstanceFromServer:error:</option>
+	
+	<option value="//api/name/deleteInstanceFromServer:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteInstanceFromServer:withBlock:</option>
+	
+	<option value="//api/name/deleteListOfInstance:error:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteListOfInstance:error:</option>
+	
+	<option value="//api/name/encryptColumsAtTable:">&nbsp;&nbsp;&nbsp;&nbsp;- encryptColumsAtTable:</option>
+	
+	<option value="//api/name/encryptDataForColumn:atTable:">&nbsp;&nbsp;&nbsp;&nbsp;- encryptDataForColumn:atTable:</option>
+	
+	<option value="//api/name/fetch:">&nbsp;&nbsp;&nbsp;&nbsp;- fetch:</option>
+	
+	<option value="//api/name/fetch:where:">&nbsp;&nbsp;&nbsp;&nbsp;- fetch:where:</option>
+	
+	<option value="//api/name/fetch:withPredicate:">&nbsp;&nbsp;&nbsp;&nbsp;- fetch:withPredicate:</option>
+	
+	<option value="//api/name/generateDataSchemaForAdd:">&nbsp;&nbsp;&nbsp;&nbsp;- generateDataSchemaForAdd:</option>
+	
+	<option value="//api/name/generateDataSchemaForDelete:">&nbsp;&nbsp;&nbsp;&nbsp;- generateDataSchemaForDelete:</option>
+	
+	<option value="//api/name/generateDataSchemaForSyncJSON:">&nbsp;&nbsp;&nbsp;&nbsp;- generateDataSchemaForSyncJSON:</option>
+	
+	<option value="//api/name/generateDataSchemaForUpdate:">&nbsp;&nbsp;&nbsp;&nbsp;- generateDataSchemaForUpdate:</option>
+	
+	<option value="//api/name/generatePersistentStore:">&nbsp;&nbsp;&nbsp;&nbsp;- generatePersistentStore:</option>
+	
+	<option value="//api/name/generateTableSchemaForAllClasses">&nbsp;&nbsp;&nbsp;&nbsp;- generateTableSchemaForAllClasses</option>
+	
+	<option value="//api/name/getPrimaryKeyValue:">&nbsp;&nbsp;&nbsp;&nbsp;- getPrimaryKeyValue:</option>
+	
+	<option value="//api/name/insertInstance:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- insertInstance:withBlock:</option>
+	
+	<option value="//api/name/insertInstanceToLocal:error:">&nbsp;&nbsp;&nbsp;&nbsp;- insertInstanceToLocal:error:</option>
+	
+	<option value="//api/name/insertInstanceToServer:error:">&nbsp;&nbsp;&nbsp;&nbsp;- insertInstanceToServer:error:</option>
+	
+	<option value="//api/name/insertInstanceToServer:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- insertInstanceToServer:withBlock:</option>
+	
+	<option value="//api/name/insertInstances:">&nbsp;&nbsp;&nbsp;&nbsp;- insertInstances:</option>
+	
+	<option value="//api/name/listOfTable">&nbsp;&nbsp;&nbsp;&nbsp;- listOfTable</option>
+	
+	<option value="//api/name/loadArrayWithClass:orderBy:andQuery:">&nbsp;&nbsp;&nbsp;&nbsp;- loadArrayWithClass:orderBy:andQuery:</option>
+	
+	<option value="//api/name/objectForClass:withId:error:">&nbsp;&nbsp;&nbsp;&nbsp;- objectForClass:withId:error:</option>
+	
+	<option value="//api/name/objectForClass:withId:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- objectForClass:withId:withBlock:</option>
+	
+	<option value="//api/name/objectFromLocalForClass:withCondition:">&nbsp;&nbsp;&nbsp;&nbsp;- objectFromLocalForClass:withCondition:</option>
+	
+	<option value="//api/name/objectFromLocalForClass:withId:">&nbsp;&nbsp;&nbsp;&nbsp;- objectFromLocalForClass:withId:</option>
+	
+	<option value="//api/name/objectFromServerForClass:withObjectId:error:">&nbsp;&nbsp;&nbsp;&nbsp;- objectFromServerForClass:withObjectId:error:</option>
+	
+	<option value="//api/name/objectsForClass:withCondition:error:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForClass:withCondition:error:</option>
+	
+	<option value="//api/name/objectsForClass:withCondition:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForClass:withCondition:withBlock:</option>
+	
+	<option value="//api/name/objectsFromServerForClass:withCondition:error:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsFromServerForClass:withCondition:error:</option>
+	
+	<option value="//api/name/registerValueObjects:isRecreate:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- registerValueObjects:isRecreate:withBlock:</option>
+	
+	<option value="//api/name/removeInstances:">&nbsp;&nbsp;&nbsp;&nbsp;- removeInstances:</option>
+	
+	<option value="//api/name/saveInstance:error:">&nbsp;&nbsp;&nbsp;&nbsp;- saveInstance:error:</option>
+	
+	<option value="//api/name/saveInstance:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- saveInstance:withBlock:</option>
+	
+	<option value="//api/name/saveListOfInstances:error:">&nbsp;&nbsp;&nbsp;&nbsp;- saveListOfInstances:error:</option>
+	
+	<option value="//api/name/swapObjects:object:">&nbsp;&nbsp;&nbsp;&nbsp;- swapObjects:object:</option>
+	
+	<option value="//api/name/tableNameForInstance:">&nbsp;&nbsp;&nbsp;&nbsp;- tableNameForInstance:</option>
+	
+	<option value="//api/name/updateDatabaseFromDeleteIds:atTable:">&nbsp;&nbsp;&nbsp;&nbsp;- updateDatabaseFromDeleteIds:atTable:</option>
+	
+	<option value="//api/name/updateDatabaseFromResult:atTable:">&nbsp;&nbsp;&nbsp;&nbsp;- updateDatabaseFromResult:atTable:</option>
+	
+	<option value="//api/name/updateInstanceToLocal:error:">&nbsp;&nbsp;&nbsp;&nbsp;- updateInstanceToLocal:error:</option>
+	
+	<option value="//api/name/updateInstanceToServer:error:">&nbsp;&nbsp;&nbsp;&nbsp;- updateInstanceToServer:error:</option>
+	
+	<option value="//api/name/updateInstanceToServer:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- updateInstanceToServer:withBlock:</option>
+	
+	<option value="//api/name/updateInstances:">&nbsp;&nbsp;&nbsp;&nbsp;- updateInstances:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_InternalMethods Methods">InternalMethods Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertToObjectFromDictionary:ofClass:">convertToObjectFromDictionary:ofClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/count:">count:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/decryptColumsAtTable:">decryptColumsAtTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/decryptDataForColumn:atTable:">decryptDataForColumn:atTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteAllDataFor:">deleteAllDataFor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteInstance:error:">deleteInstance:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteInstance:withBlock:">deleteInstance:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteInstanceFromLocal:error:">deleteInstanceFromLocal:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteInstanceFromServer:error:">deleteInstanceFromServer:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteInstanceFromServer:withBlock:">deleteInstanceFromServer:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteListOfInstance:error:">deleteListOfInstance:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/encryptColumsAtTable:">encryptColumsAtTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/encryptDataForColumn:atTable:">encryptDataForColumn:atTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetch:">fetch:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetch:where:">fetch:where:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetch:withPredicate:">fetch:withPredicate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateDataSchemaForAdd:">generateDataSchemaForAdd:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateDataSchemaForDelete:">generateDataSchemaForDelete:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateDataSchemaForSyncJSON:">generateDataSchemaForSyncJSON:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateDataSchemaForUpdate:">generateDataSchemaForUpdate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generatePersistentStore:">generatePersistentStore:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateTableSchemaForAllClasses">generateTableSchemaForAllClasses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPrimaryKeyValue:">getPrimaryKeyValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertInstance:withBlock:">insertInstance:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertInstanceToLocal:error:">insertInstanceToLocal:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertInstanceToServer:error:">insertInstanceToServer:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertInstanceToServer:withBlock:">insertInstanceToServer:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertInstances:">insertInstances:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listOfTable">listOfTable</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadArrayWithClass:orderBy:andQuery:">loadArrayWithClass:orderBy:andQuery:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectForClass:withId:error:">objectForClass:withId:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectForClass:withId:withBlock:">objectForClass:withId:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectFromLocalForClass:withCondition:">objectFromLocalForClass:withCondition:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectFromLocalForClass:withId:">objectFromLocalForClass:withId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectFromServerForClass:withObjectId:error:">objectFromServerForClass:withObjectId:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForClass:withCondition:error:">objectsForClass:withCondition:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForClass:withCondition:withBlock:">objectsForClass:withCondition:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsFromServerForClass:withCondition:error:">objectsFromServerForClass:withCondition:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerValueObjects:isRecreate:withBlock:">registerValueObjects:isRecreate:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeInstances:">removeInstances:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveInstance:error:">saveInstance:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveInstance:withBlock:">saveInstance:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveListOfInstances:error:">saveListOfInstances:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/swapObjects:object:">swapObjects:object:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tableNameForInstance:">tableNameForInstance:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateDatabaseFromDeleteIds:atTable:">updateDatabaseFromDeleteIds:atTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateDatabaseFromResult:atTable:">updateDatabaseFromResult:atTable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateInstanceToLocal:error:">updateInstanceToLocal:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateInstanceToServer:error:">updateInstanceToServer:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateInstanceToServer:withBlock:">updateInstanceToServer:withBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateInstances:">updateInstances:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="APEntityManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">APEntityManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">APEntityManager.h<br />APEntityManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerValueObjects:isRecreate:withBlock:">&ndash;&nbsp;registerValueObjects:isRecreate:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectForClass:withId:withBlock:">&ndash;&nbsp;objectForClass:withId:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectForClass:withId:error:">&ndash;&nbsp;objectForClass:withId:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveInstance:error:">&ndash;&nbsp;saveInstance:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveInstance:withBlock:">&ndash;&nbsp;saveInstance:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveListOfInstances:error:">&ndash;&nbsp;saveListOfInstances:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteInstance:error:">&ndash;&nbsp;deleteInstance:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteInstance:withBlock:">&ndash;&nbsp;deleteInstance:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteListOfInstance:error:">&ndash;&nbsp;deleteListOfInstance:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteAllDataFor:">&ndash;&nbsp;deleteAllDataFor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/count:">&ndash;&nbsp;count:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateTableSchemaForAllClasses">&ndash;&nbsp;generateTableSchemaForAllClasses</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateDataSchemaForSyncJSON:">&ndash;&nbsp;generateDataSchemaForSyncJSON:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tableNameForInstance:">&ndash;&nbsp;tableNameForInstance:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateDataSchemaForAdd:">&ndash;&nbsp;generateDataSchemaForAdd:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateDataSchemaForUpdate:">&ndash;&nbsp;generateDataSchemaForUpdate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateDataSchemaForDelete:">&ndash;&nbsp;generateDataSchemaForDelete:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generatePersistentStore:">&ndash;&nbsp;generatePersistentStore:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectFromServerForClass:withObjectId:error:">&ndash;&nbsp;objectFromServerForClass:withObjectId:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsFromServerForClass:withCondition:error:">&ndash;&nbsp;objectsFromServerForClass:withCondition:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForClass:withCondition:error:">&ndash;&nbsp;objectsForClass:withCondition:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForClass:withCondition:withBlock:">&ndash;&nbsp;objectsForClass:withCondition:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectFromLocalForClass:withId:">&ndash;&nbsp;objectFromLocalForClass:withId:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectFromLocalForClass:withCondition:">&ndash;&nbsp;objectFromLocalForClass:withCondition:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadArrayWithClass:orderBy:andQuery:">&ndash;&nbsp;loadArrayWithClass:orderBy:andQuery:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateInstanceToLocal:error:">&ndash;&nbsp;updateInstanceToLocal:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateInstanceToServer:error:">&ndash;&nbsp;updateInstanceToServer:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateInstanceToServer:withBlock:">&ndash;&nbsp;updateInstanceToServer:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateInstances:">&ndash;&nbsp;updateInstances:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteInstanceFromLocal:error:">&ndash;&nbsp;deleteInstanceFromLocal:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteInstanceFromServer:error:">&ndash;&nbsp;deleteInstanceFromServer:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteInstanceFromServer:withBlock:">&ndash;&nbsp;deleteInstanceFromServer:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeInstances:">&ndash;&nbsp;removeInstances:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertInstance:withBlock:">&ndash;&nbsp;insertInstance:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertInstanceToLocal:error:">&ndash;&nbsp;insertInstanceToLocal:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertInstanceToServer:error:">&ndash;&nbsp;insertInstanceToServer:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertInstanceToServer:withBlock:">&ndash;&nbsp;insertInstanceToServer:withBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetch:">&ndash;&nbsp;fetch:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetch:where:">&ndash;&nbsp;fetch:where:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetch:withPredicate:">&ndash;&nbsp;fetch:withPredicate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getPrimaryKeyValue:">&ndash;&nbsp;getPrimaryKeyValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertToObjectFromDictionary:ofClass:">&ndash;&nbsp;convertToObjectFromDictionary:ofClass:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/swapObjects:object:">&ndash;&nbsp;swapObjects:object:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/listOfTable">&ndash;&nbsp;listOfTable</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateDatabaseFromResult:atTable:">&ndash;&nbsp;updateDatabaseFromResult:atTable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateDatabaseFromDeleteIds:atTable:">&ndash;&nbsp;updateDatabaseFromDeleteIds:atTable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/encryptDataForColumn:atTable:">&ndash;&nbsp;encryptDataForColumn:atTable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/decryptDataForColumn:atTable:">&ndash;&nbsp;decryptDataForColumn:atTable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/encryptColumsAtTable:">&ndash;&nbsp;encryptColumsAtTable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/decryptColumsAtTable:">&ndash;&nbsp;decryptColumsAtTable:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="InternalMethods Methods" name="task_InternalMethods Methods"></a>
+						<h3 class="subsubtitle task-title">InternalMethods Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertInstances:">&ndash;&nbsp;insertInstances:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Singleton object</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (APEntityManager *)sharedInstance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/convertToObjectFromDictionary:ofClass:" title="convertToObjectFromDictionary:ofClass:"></a>
+	<h3 class="subsubtitle method-title">convertToObjectFromDictionary:ofClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return an instance from response server
+@property dic, _class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)convertToObjectFromDictionary:(NSDictionary *)<em>dic</em> ofClass:(Class)<em>_class</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/count:" title="count:"></a>
+	<h3 class="subsubtitle method-title">count:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定してクラスのデータの件数を返す。Count number of row of class from local database
+@param _class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)count:(Class)<em>_class</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/decryptColumsAtTable:" title="decryptColumsAtTable:"></a>
+	<h3 class="subsubtitle method-title">decryptColumsAtTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Decrypt all columns of table
+@property tableName</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)decryptColumsAtTable:(NSString *)<em>tableName</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/decryptDataForColumn:atTable:" title="decryptDataForColumn:atTable:"></a>
+	<h3 class="subsubtitle method-title">decryptDataForColumn:atTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Decrypt value of column of table
+@property column, tableName</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)decryptDataForColumn:(NSString *)<em>column</em> atTable:(NSString *)<em>tableName</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteAllDataFor:" title="deleteAllDataFor:"></a>
+	<h3 class="subsubtitle method-title">deleteAllDataFor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定したクラスの全てのデータを削除する。
+@param _class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteAllDataFor:(Class)<em>_class</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>データストレージ内のデータが全て削除されるので使用には注意が必要。ローカルストレージでは物理削除、サーバー側では論理削除が行われる。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteInstance:error:" title="deleteInstance:error:"></a>
+	<h3 class="subsubtitle method-title">deleteInstance:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>対象データオブジェクトを削除する。この処理は同期型で行われる。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)deleteInstance:(APObject *)<em>instance</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>削除するデータオブジェクト。</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>発生したエラーを格納するためのエラーオブジェクト</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteInstance:withBlock:" title="deleteInstance:withBlock:"></a>
+	<h3 class="subsubtitle method-title">deleteInstance:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>対象データオブジェクトを削除する。この処理は非同期型で行われる。
+@property instance　削除するデータオブジェクト。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteInstance:(APObject *)<em>instance</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>発生したエラーを格納するためのエラーオブジェクト</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteInstanceFromLocal:error:" title="deleteInstanceFromLocal:error:"></a>
+	<h3 class="subsubtitle method-title">deleteInstanceFromLocal:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>ローカルストレージにあるデータを削除する。
+@property instance</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)deleteInstanceFromLocal:(APObject *)<em>instance</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteInstanceFromServer:error:" title="deleteInstanceFromServer:error:"></a>
+	<h3 class="subsubtitle method-title">deleteInstanceFromServer:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>サーバーのストレージにあるデータを同期型で削除する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)deleteInstanceFromServer:(APObject *)<em>instance</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>削除対象のデータオブジェクト</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>削除の際に発生したエラーを格納
+@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteInstanceFromServer:withBlock:" title="deleteInstanceFromServer:withBlock:"></a>
+	<h3 class="subsubtitle method-title">deleteInstanceFromServer:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>サーバーのストレージにあるデータを期型で削除する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteInstanceFromServer:(APObject *)<em>instance</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>削除対象のデータオブジェクト</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>削除の際に発生したエラーを格納
+@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteListOfInstance:error:" title="deleteListOfInstance:error:"></a>
+	<h3 class="subsubtitle method-title">deleteListOfInstance:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>対象データオブジェクトの一覧を削除する。この処理は同期型で行われる。
+@property instance　削除するデータオブジェクト。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)deleteListOfInstance:(NSArray *)<em>list</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>発生したエラーを格納するためのエラーオブジェクト</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/encryptColumsAtTable:" title="encryptColumsAtTable:"></a>
+	<h3 class="subsubtitle method-title">encryptColumsAtTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Encrypt all columns of table
+@property tableName</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)encryptColumsAtTable:(NSString *)<em>tableName</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/encryptDataForColumn:atTable:" title="encryptDataForColumn:atTable:"></a>
+	<h3 class="subsubtitle method-title">encryptDataForColumn:atTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Encrypt value of column of table
+@property column, tableName</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)encryptDataForColumn:(NSString *)<em>column</em> atTable:(NSString *)<em>tableName</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetch:" title="fetch:"></a>
+	<h3 class="subsubtitle method-title">fetch:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetch all rows from local database
+@property _class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)fetch:(Class)<em>_class</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetch:where:" title="fetch:where:"></a>
+	<h3 class="subsubtitle method-title">fetch:where:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetch rows from local database with condition
+@property _class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)fetch:(Class)<em>_class</em> where:(APCondition)<em>predicate</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetch:withPredicate:" title="fetch:withPredicate:"></a>
+	<h3 class="subsubtitle method-title">fetch:withPredicate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetch rows from local database with predicate
+@property _class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)fetch:(Class)<em>_class</em> withPredicate:(NSPredicate *)<em>predicate</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generateDataSchemaForAdd:" title="generateDataSchemaForAdd:"></a>
+	<h3 class="subsubtitle method-title">generateDataSchemaForAdd:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generate JSON format from list of instances
+@property list</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)generateDataSchemaForAdd:(NSArray *)<em>list</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generateDataSchemaForDelete:" title="generateDataSchemaForDelete:"></a>
+	<h3 class="subsubtitle method-title">generateDataSchemaForDelete:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generate string from list of instances
+@property listOfRecord</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)generateDataSchemaForDelete:(NSArray *)<em>listOfRecord</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generateDataSchemaForSyncJSON:" title="generateDataSchemaForSyncJSON:"></a>
+	<h3 class="subsubtitle method-title">generateDataSchemaForSyncJSON:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a schema of table structure.
+@property tableName</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)generateDataSchemaForSyncJSON:(NSString *)<em>tableName</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generateDataSchemaForUpdate:" title="generateDataSchemaForUpdate:"></a>
+	<h3 class="subsubtitle method-title">generateDataSchemaForUpdate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generate JSON format from list of instances
+@property list</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)generateDataSchemaForUpdate:(NSArray *)<em>list</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generatePersistentStore:" title="generatePersistentStore:"></a>
+	<h3 class="subsubtitle method-title">generatePersistentStore:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generate persistent store
+@property _class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)generatePersistentStore:(Class)<em>_class</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generateTableSchemaForAllClasses" title="generateTableSchemaForAllClasses"></a>
+	<h3 class="subsubtitle method-title">generateTableSchemaForAllClasses</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a shema of database structure.
+@property</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)generateTableSchemaForAllClasses</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getPrimaryKeyValue:" title="getPrimaryKeyValue:"></a>
+	<h3 class="subsubtitle method-title">getPrimaryKeyValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve value of primary key of instance.
+@property instance</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getPrimaryKeyValue:(id)<em>instance</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertInstance:withBlock:" title="insertInstance:withBlock:"></a>
+	<h3 class="subsubtitle method-title">insertInstance:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>1件のデータをストレージに挿入する。
+@param instance
+@param error</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)insertInstance:(APObject *)<em>instance</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertInstanceToLocal:error:" title="insertInstanceToLocal:error:"></a>
+	<h3 class="subsubtitle method-title">insertInstanceToLocal:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>一つのデータオブジェクトを同期でローカルストレージに生成する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)insertInstanceToLocal:(APObject *)<em>instance</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>保存対象のデータオブジェクト</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>データの生成の際に発生したエラーを格納する</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertInstanceToServer:error:" title="insertInstanceToServer:error:"></a>
+	<h3 class="subsubtitle method-title">insertInstanceToServer:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>一つのデータオブジェクトを同期でサーバー側に生成する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)insertInstanceToServer:(APObject *)<em>instance</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>保存対象のデータオブジェクト</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>データの生成の際に発生したエラーを格納する</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertInstanceToServer:withBlock:" title="insertInstanceToServer:withBlock:"></a>
+	<h3 class="subsubtitle method-title">insertInstanceToServer:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>一つのデータオブジェクトを非同期でサーバー側に生成する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)insertInstanceToServer:(APObject *)<em>instance</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>保存対象のデータオブジェクト</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>データの生成の後に実行する処理</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertInstances:" title="insertInstances:"></a>
+	<h3 class="subsubtitle method-title">insertInstances:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>複数のデータオブジェクトをストレージに保存する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)insertInstances:(NSArray *)<em>instances</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instances</em></dt>
+			<dd><p>保存するデータオブジェクトの一覧。各データオブジェクトは異なる種類でもいい。</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/listOfTable" title="listOfTable"></a>
+	<h3 class="subsubtitle method-title">listOfTable</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>List of tables in local database
+@property array, table</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)listOfTable</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadArrayWithClass:orderBy:andQuery:" title="loadArrayWithClass:orderBy:andQuery:"></a>
+	<h3 class="subsubtitle method-title">loadArrayWithClass:orderBy:andQuery:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sort condititon</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)loadArrayWithClass:(Class)<em>_class</em> orderBy:(NSString *)<em>oderBy</em> andQuery:(NSString *)<em>query</em>, <em>...</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sort condititon</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectForClass:withId:error:" title="objectForClass:withId:error:"></a>
+	<h3 class="subsubtitle method-title">objectForClass:withId:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>主キー（objectId）を指定して一件のデータクラスを取得する。このメソッドは同期型で処理される。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)objectForClass:(Class)<em>_class</em> withId:(NSString *)<em>objectId</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータの種別をクラスで指定</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>objectId</em></dt>
+			<dd><p>取得するデータの主キー</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>発生したエラーを収納するエラーオブジェクトを渡す。</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectForClass:withId:withBlock:" title="objectForClass:withId:withBlock:"></a>
+	<h3 class="subsubtitle method-title">objectForClass:withId:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>主キー（objectId）を指定して一件のデータクラスを取得する。このメソッドは非同期型で処理される。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)objectForClass:(Class)<em>_class</em> withId:(NSString *)<em>objectId</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータの種別をクラスで指定</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>objectId</em></dt>
+			<dd><p>取得するデータの主キー</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>取得したデータや発生したエラーを処理するブロック</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectFromLocalForClass:withCondition:" title="objectFromLocalForClass:withCondition:"></a>
+	<h3 class="subsubtitle method-title">objectFromLocalForClass:withCondition:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定した条件に合致するデータをローカルストレージから同期型で取得する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectFromLocalForClass:(Class)<em>_class</em> withCondition:(NSDictionary *)<em>condition</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータクラス</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>condition</em></dt>
+			<dd><p>データを取得する条件
+@discussion
+Return a list of instances of class based on the condition.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectFromLocalForClass:withId:" title="objectFromLocalForClass:withId:"></a>
+	<h3 class="subsubtitle method-title">objectFromLocalForClass:withId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定したIDに合致するデータをローカルストレージから同期型で取得する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)objectFromLocalForClass:(Class)<em>_class</em> withId:(NSString *)<em>objectId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータクラス</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>objectId</em></dt>
+			<dd><p>データのID
+@discussion
+Return a list of instances of class based on the condition.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectFromServerForClass:withObjectId:error:" title="objectFromServerForClass:withObjectId:error:"></a>
+	<h3 class="subsubtitle method-title">objectFromServerForClass:withObjectId:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定したobjectIdに合致するデータを取得する。データが取得されるまで呼び出したメソッドは待機する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)objectFromServerForClass:(Class)<em>_class</em> withObjectId:(NSString *)<em>objectId</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータクラス</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>objectId</em></dt>
+			<dd><p>取得するデータのID</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>エラーが渡される。
+@discussion
+このメソッドは同期型で処理されるため、データの件数やネットワークの状態等によっては呼び出し元のスレッドは長時間待たされることがあり得るので注意が必要。</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForClass:withCondition:error:" title="objectsForClass:withCondition:error:"></a>
+	<h3 class="subsubtitle method-title">objectsForClass:withCondition:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定した条件に合致するデータを取得する。データが取得されるまで呼び出したメソッドは待機する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsForClass:(Class)<em>_class</em> withCondition:(NSDictionary *)<em>condition</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータクラス</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>condition</em></dt>
+			<dd><p>データを取得する条件</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>エラーが渡される。
+@discussion
+このメソッドは同期型で処理されるため、データの件数やネットワークの状態等によっては呼び出し元のスレッドは長時間待たされることがあり得るので注意が必要。</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForClass:withCondition:withBlock:" title="objectsForClass:withCondition:withBlock:"></a>
+	<h3 class="subsubtitle method-title">objectsForClass:withCondition:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定した条件に合致するデータを取得する。呼び出したスレッドはそのまま処理を続行し、データが取得されると非同期でブロックのコードが実行される。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)objectsForClass:(Class)<em>_class</em> withCondition:(NSDictionary *)<em>condition</em> withBlock:(APArrayResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータクラス</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>condition</em></dt>
+			<dd><p>データを取得する条件</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>APArrayResultBlock 取得したデータの一覧とエラーが渡される。
+@discussion
+Return a list of instances of class based on the condition.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsFromServerForClass:withCondition:error:" title="objectsFromServerForClass:withCondition:error:"></a>
+	<h3 class="subsubtitle method-title">objectsFromServerForClass:withCondition:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>指定した条件に合致するデータを取得する。データが取得されるまで呼び出したメソッドは待機する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsFromServerForClass:(Class)<em>_class</em> withCondition:(NSDictionary *)<em>condition</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>_class</em></dt>
+			<dd><p>取得するデータクラス</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>condition</em></dt>
+			<dd><p>取得するデータの条件</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>エラーが渡される。
+@discussion
+このメソッドは同期型で処理されるため、データの件数やネットワークの状態等によっては呼び出し元のスレッドは長時間待たされることがあり得るので注意が必要。</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerValueObjects:isRecreate:withBlock:" title="registerValueObjects:isRecreate:withBlock:"></a>
+	<h3 class="subsubtitle method-title">registerValueObjects:isRecreate:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>アプリが使用するデータオブジェクトをSDKに登録する。Register Value Objects of App to AppPot SDK.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)registerValueObjects:(NSArray *)<em>classes</em> isRecreate:(BOOL)<em>isRecreateDatabase</em> withBlock:(APErrorBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>classes</em></dt>
+			<dd><p>データオブジェクトののClass型の一覧。</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>データのスキーマ作成に失敗した場合に実行する処理を記述するブロック。初期起動時、開発時にはアプリの稼働を中止することを推奨する。</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>アプリケーションのデベロッパーはアプリで使う全てのデータクラスをAPObjectの子クラスとして定義、このメソッドを通してSDKに登録する。
+この登録によってデバイス及びサーバー側のデータベースや各テーブルのスキーマが作成される。登録されなかったデータクラスはSDKによって管理されない。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeInstances:" title="removeInstances:"></a>
+	<h3 class="subsubtitle method-title">removeInstances:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove instance of class from local database
+@property instance</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeInstances:(NSArray *)<em>instances</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveInstance:error:" title="saveInstance:error:"></a>
+	<h3 class="subsubtitle method-title">saveInstance:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>対象のデータオブジェクトを保存する。この処理は同期型で行われる。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)saveInstance:(APObject *)<em>valueObject</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>valueObject</em></dt>
+			<dd><p>保存するデータオブジェクト。</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>発生したエラーを格納するためのエラーオブジェクト</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>対象データオブジェクトが新規の場合は新規データの追加、既存のものである場合は既存データの更新が行われる。正常時は更新が終わったデータオブジェクトを返す。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveInstance:withBlock:" title="saveInstance:withBlock:"></a>
+	<h3 class="subsubtitle method-title">saveInstance:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>対象のデータオブジェクトを保存する。この処理は非同期型で行われる。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)saveInstance:(APObject *)<em>valueObject</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>valueObject</em></dt>
+			<dd><p>保存するデータオブジェクト。</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>データの処理結果を取得しその後の処理を行うためのブロック</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>対象データオブジェクトが新規の場合は新規データの追加、既存のものである場合は既存データの更新が行われる。正常時は更新が終わったデータオブジェクトを返す。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveListOfInstances:error:" title="saveListOfInstances:error:"></a>
+	<h3 class="subsubtitle method-title">saveListOfInstances:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>対象のデータオブジェクト一覧を保存する。この処理は同期型で行われる。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)saveListOfInstances:(NSArray *)<em>list</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>list</em></dt>
+			<dd><p>保存するデータオブジェクトの一覧。</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>発生したエラーを格納するためのエラーオブジェクト</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>対象データオブジェクトが新規の場合は新規データの追加、既存のものである場合は既存データの更新が行われる。正常時は更新が終わったデータオブジェクトを返す。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/swapObjects:object:" title="swapObjects:object:"></a>
+	<h3 class="subsubtitle method-title">swapObjects:object:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Swap 2 instances
+@property objOne, objTwo</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)swapObjects:(id)<em>objOne</em> object:(id)<em>objTwo</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tableNameForInstance:" title="tableNameForInstance:"></a>
+	<h3 class="subsubtitle method-title">tableNameForInstance:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>///For Data Access</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)tableNameForInstance:(id)<em>instance</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>///For Data Access</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateDatabaseFromDeleteIds:atTable:" title="updateDatabaseFromDeleteIds:atTable:"></a>
+	<h3 class="subsubtitle method-title">updateDatabaseFromDeleteIds:atTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete rows of table in local database
+@property array, table</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateDatabaseFromDeleteIds:(NSArray *)<em>array</em> atTable:(NSString *)<em>table</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateDatabaseFromResult:atTable:" title="updateDatabaseFromResult:atTable:"></a>
+	<h3 class="subsubtitle method-title">updateDatabaseFromResult:atTable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update table of local database with list of row values.
+@property array, table</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateDatabaseFromResult:(NSArray *)<em>array</em> atTable:(NSString *)<em>table</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateInstanceToLocal:error:" title="updateInstanceToLocal:error:"></a>
+	<h3 class="subsubtitle method-title">updateInstanceToLocal:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update instance of class to local database
+@property instance</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)updateInstanceToLocal:(APObject *)<em>instance</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateInstanceToServer:error:" title="updateInstanceToServer:error:"></a>
+	<h3 class="subsubtitle method-title">updateInstanceToServer:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>一つのデータオブジェクトを同期でサーバー側に更新する。
+@property instance 更新対象のデータオブジェクト</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)updateInstanceToServer:(APObject *)<em>instance</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>データ更新の際に発生したエラーを格納</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateInstanceToServer:withBlock:" title="updateInstanceToServer:withBlock:"></a>
+	<h3 class="subsubtitle method-title">updateInstanceToServer:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>一つのデータオブジェクトを非同期でサーバー側に更新する。
+@property instance 保存対象のデータオブジェクト</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateInstanceToServer:(APObject *)<em>instance</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>データ更新の後に実行する処理</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateInstances:" title="updateInstances:"></a>
+	<h3 class="subsubtitle method-title">updateInstances:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update instance of class to local database
+@property instance</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateInstances:(NSArray *)<em>instances</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APEntityManager+InternalMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 NC Design &amp; Consulting Co., Ltd.. All rights reserved. (Last updated: 2014-02-23)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

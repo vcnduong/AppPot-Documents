@@ -1,0 +1,1407 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>APObject Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AppPot SDK for iOS </a></h1>
+				<a id="developerHome" href="../index.html">NC Design &amp; Consulting Co., Ltd.</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">APObject Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/autoRefreshInterval">&nbsp;&nbsp;&nbsp;&nbsp;autoRefreshInterval</option>
+	
+	<option value="//api/name/createTime">&nbsp;&nbsp;&nbsp;&nbsp;createTime</option>
+	
+	<option value="//api/name/createUserId">&nbsp;&nbsp;&nbsp;&nbsp;createUserId</option>
+	
+	<option value="//api/name/groupIds">&nbsp;&nbsp;&nbsp;&nbsp;groupIds</option>
+	
+	<option value="//api/name/isAutoRefresh">&nbsp;&nbsp;&nbsp;&nbsp;isAutoRefresh</option>
+	
+	<option value="//api/name/isUsingLockForUpdate">&nbsp;&nbsp;&nbsp;&nbsp;isUsingLockForUpdate</option>
+	
+	<option value="//api/name/lifeSpan">&nbsp;&nbsp;&nbsp;&nbsp;lifeSpan</option>
+	
+	<option value="//api/name/objectId">&nbsp;&nbsp;&nbsp;&nbsp;objectId</option>
+	
+	<option value="//api/name/persistentType">&nbsp;&nbsp;&nbsp;&nbsp;persistentType</option>
+	
+	<option value="//api/name/scopeType">&nbsp;&nbsp;&nbsp;&nbsp;scopeType</option>
+	
+	<option value="//api/name/serverUpdateTime">&nbsp;&nbsp;&nbsp;&nbsp;serverUpdateTime</option>
+	
+	<option value="//api/name/syncStatus">&nbsp;&nbsp;&nbsp;&nbsp;syncStatus</option>
+	
+	<option value="//api/name/updateTime">&nbsp;&nbsp;&nbsp;&nbsp;updateTime</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/objectWithId:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ objectWithId:error:</option>
+	
+	<option value="//api/name/objectWithId:withBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ objectWithId:withBlock:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/deleteObject:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObject:</option>
+	
+	<option value="//api/name/deleteObjectWithBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObjectWithBlock:</option>
+	
+	<option value="//api/name/initForServerOnlyWithScopeType:">&nbsp;&nbsp;&nbsp;&nbsp;- initForServerOnlyWithScopeType:</option>
+	
+	<option value="//api/name/refreshObjectWithBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- refreshObjectWithBlock:</option>
+	
+	<option value="//api/name/saveObject:">&nbsp;&nbsp;&nbsp;&nbsp;- saveObject:</option>
+	
+	<option value="//api/name/saveWithBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- saveWithBlock:</option>
+	
+	<option value="//api/name/setDefaultProperties">&nbsp;&nbsp;&nbsp;&nbsp;- setDefaultProperties</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoRefreshInterval">autoRefreshInterval</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createTime">createTime</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createUserId">createUserId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupIds">groupIds</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAutoRefresh">isAutoRefresh</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isUsingLockForUpdate">isUsingLockForUpdate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lifeSpan">lifeSpan</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectId">objectId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/persistentType">persistentType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scopeType">scopeType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverUpdateTime">serverUpdateTime</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/syncStatus">syncStatus</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateTime">updateTime</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectWithId:error:">objectWithId:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectWithId:withBlock:">objectWithId:withBlock:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObject:">deleteObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObjectWithBlock:">deleteObjectWithBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initForServerOnlyWithScopeType:">initForServerOnlyWithScopeType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshObjectWithBlock:">refreshObjectWithBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveObject:">saveObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveWithBlock:">saveWithBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultProperties">setDefaultProperties</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="APObject Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">APObject Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">APObject.h<br />APObject.m</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>AppPotによって永続化が管理するクラスは全てこのクラスを親クラスとして指定する必要がある。
+　　　　　　　SDKを利用する開発車はこのクラスが定義している属性を適切に設定することでAppPot SKDによるデータの管理方式やデータ保存場所等を指定する。</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectId">&nbsp;&nbsp;objectId</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createUserId">&nbsp;&nbsp;createUserId</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/groupIds">&nbsp;&nbsp;groupIds</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAutoRefresh">&nbsp;&nbsp;isAutoRefresh</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/autoRefreshInterval">&nbsp;&nbsp;autoRefreshInterval</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scopeType">&nbsp;&nbsp;scopeType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lifeSpan">&nbsp;&nbsp;lifeSpan</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/syncStatus">&nbsp;&nbsp;syncStatus</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/persistentType">&nbsp;&nbsp;persistentType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isUsingLockForUpdate">&nbsp;&nbsp;isUsingLockForUpdate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createTime">&nbsp;&nbsp;createTime</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateTime">&nbsp;&nbsp;updateTime</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serverUpdateTime">&nbsp;&nbsp;serverUpdateTime</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initForServerOnlyWithScopeType:">&ndash;&nbsp;initForServerOnlyWithScopeType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultProperties">&ndash;&nbsp;setDefaultProperties</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveObject:">&ndash;&nbsp;saveObject:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveWithBlock:">&ndash;&nbsp;saveWithBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteObject:">&ndash;&nbsp;deleteObject:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteObjectWithBlock:">&ndash;&nbsp;deleteObjectWithBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/refreshObjectWithBlock:">&ndash;&nbsp;refreshObjectWithBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectWithId:error:">+&nbsp;objectWithId:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectWithId:withBlock:">+&nbsp;objectWithId:withBlock:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/autoRefreshInterval" title="autoRefreshInterval"></a>
+	<h3 class="subsubtitle method-title">autoRefreshInterval</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクラスのデータをサーバー側のデータで更新するまでの間隔。秒単位で指定。Refresh time interval
+@property refreshInterval</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) long autoRefreshInterval</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createTime" title="createTime"></a>
+	<h3 class="subsubtitle method-title">createTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Created time
+@property createTime</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *createTime</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createUserId" title="createUserId"></a>
+	<h3 class="subsubtitle method-title">createUserId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このデータを作成したユーザーのID
+@property createUserID</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) long createUserId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/groupIds" title="groupIds"></a>
+	<h3 class="subsubtitle method-title">groupIds</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このデータへのアクセスができるグループのID
+@property groupIDs</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *groupIds</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAutoRefresh" title="isAutoRefresh"></a>
+	<h3 class="subsubtitle method-title">isAutoRefresh</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクラスの情報を定期的にサーバーからアップデートするかとうかを指定。Desice if data of this class refreshed automatically by the value in the server.
+@property doRefreshAutomatically</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL isAutoRefresh</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>デフォルト値はNO。つまりサーバーとの自動同期は行わない。この値がYESに設定されたクラスに対してはAppPot SDKが定期的にサーバーの情報を確認して端末内のデータを更新する。端末内のデータの変更をサーバーに通知することはない。端末でのデータの更新はAPEntityManagerの更新用APIを使って行う。サーターアンダギーとの情報更新の間隔はrefreshIntervalによって設定する。Default value for isAutoRefresh is NO. If isAutoRefresh is set YES, AppPot SDK will call refresh: in a fixed period based on the value of refreshInterval.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isUsingLockForUpdate" title="isUsingLockForUpdate"></a>
+	<h3 class="subsubtitle method-title">isUsingLockForUpdate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>データを更新する前に他の人によって変更されたかを確認するか否かを指定する。
+@property isUsingLockForUpdate</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL isUsingLockForUpdate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lifeSpan" title="lifeSpan"></a>
+	<h3 class="subsubtitle method-title">lifeSpan</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Time to expired
+@property lifeSpan</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) long lifeSpan</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectId" title="objectId"></a>
+	<h3 class="subsubtitle method-title">objectId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このデータの識別子となるキーシステム全体でユニークである。
+@property objectId</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *objectId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/persistentType" title="persistentType"></a>
+	<h3 class="subsubtitle method-title">persistentType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Type of data access
+@property peristentType</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) int persistentType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scopeType" title="scopeType"></a>
+	<h3 class="subsubtitle method-title">scopeType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクラスに対するアクセス権限（readwrite）Access right for the class
+@property scopeType</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger scopeType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serverUpdateTime" title="serverUpdateTime"></a>
+	<h3 class="subsubtitle method-title">serverUpdateTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>サーバーでの更新時刻。
+@property <a href="#//api/name/updateTime">updateTime</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *serverUpdateTime</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/syncStatus" title="syncStatus"></a>
+	<h3 class="subsubtitle method-title">syncStatus</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>データの同期状態
+@property syncStatus</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) SYNC_STATUS syncStatus</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateTime" title="updateTime"></a>
+	<h3 class="subsubtitle method-title">updateTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Updated object
+@property updateTime</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *updateTime</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/objectWithId:error:" title="objectWithId:error:"></a>
+	<h3 class="subsubtitle method-title">objectWithId:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refresh immediately
+@property   self</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)objectWithId:(NSString *)<em>objectId</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectWithId:withBlock:" title="objectWithId:withBlock:"></a>
+	<h3 class="subsubtitle method-title">objectWithId:withBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refresh immediately
+@property   self</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)objectWithId:(NSString *)<em>objectId</em> withBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteObject:" title="deleteObject:"></a>
+	<h3 class="subsubtitle method-title">deleteObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>データを同期型で削除する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)deleteObject:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>データの削除の際に発生したエラーを格納する</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteObjectWithBlock:" title="deleteObjectWithBlock:"></a>
+	<h3 class="subsubtitle method-title">deleteObjectWithBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>データを非同期型で削除する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteObjectWithBlock:(APResponseResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>データの削除の際に発生したエラーを格納する</p>
+
+<p>@discussion</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initForServerOnlyWithScopeType:" title="initForServerOnlyWithScopeType:"></a>
+	<h3 class="subsubtitle method-title">initForServerOnlyWithScopeType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>サーバー側に保存する目的でデータを生成する。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initForServerOnlyWithScopeType:(SCOPE_TYPE)<em>scopeType</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scopeType</em></dt>
+			<dd><p>データへのアクセス権限の範囲を指定</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>端末にはデータを保存せず、サーバーだけに保存するためのデータを生成する。
+このメソッドで生成されたデータはこのクラスの指定された永続化場所とは関係なくサーバーにだけ保存される。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/refreshObjectWithBlock:" title="refreshObjectWithBlock:"></a>
+	<h3 class="subsubtitle method-title">refreshObjectWithBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refresh immediately
+@property   self</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)refreshObjectWithBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveObject:" title="saveObject:"></a>
+	<h3 class="subsubtitle method-title">saveObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このオブジェクトの情報をデータストーアに同期型で反映する。保存先のデータストーアはpersistentTypeによって制御される。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (APObject *)saveObject:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>オブジェクトの更新中に発生したエラーを格</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>object. 保存されたオブジェクトを返す。
+@discussion
+このメソッドはオブジェクトの状態によってデータストーアに新しいデータを追加、あるいは既存のデータを更新する。新しいデータであるか否かはobjectIdの有無で判断する。objectIdがない場合は新しいデータとして追加する。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveWithBlock:" title="saveWithBlock:"></a>
+	<h3 class="subsubtitle method-title">saveWithBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このオブジェクトの情報をデータストーアに非同期型で反映する。保存先のデータストーアはpersistentTypeによって制御される。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)saveWithBlock:(APObjectResultBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ブロック</em></dt>
+			<dd><p>オブジェクトの更新が終わった後に実行されるコードを渡す。</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="#//api/name/objectId">objectId</a>. 保存されたオブジェクトの識別子を返す。
+@discussion
+このメソッドはオブジェクトの状態によってデータストーアに新しいデータを追加、あるいは既存のデータを更新する。新しいデータであるか否かはobjectIdの有無で判断する。objectIdがない場合は新しいデータとして追加する。</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultProperties" title="setDefaultProperties"></a>
+	<h3 class="subsubtitle method-title">setDefaultProperties</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>このクラスの基本的な設定を行う。</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setDefaultProperties</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>以下の属性を設定することでこのクラスの基本的な操作方式を指定する。この指定はこのクラスの全てのインスタンスに適用される。
+以下に設定可能な属性と設定しなかった場合のデフォルト値を示す。このメソッド内で設定しなかった属性に対してはデフォルト値が適用される。</p>
+
+<p>self.peristentType              = APPersistentServerOnly; // データの保存場所を指定する。
+self.<a href="../Classes/APObject.html#//api/name/isAutoRefresh">isAutoRefresh</a>              = NO; // データの保存場所が端末とサーバー（APPersistentServerAndLocal)で、端末のデータを自動更新する場合のみYESにする。
+self.refreshInterval            = 600; // 自動更新を行う場合、自動更新の時間間隔を秒単位で指定する。デフォルト値は１０分か、SDKの初期化にて指定された時間が使用される。
+self.<a href="../Classes/APObject.html#//api/name/lifeSpan">lifeSpan</a>                   = 2,592,000; // 永続化場所が端末とサーバー（APPersistentServerAndLocal）である場合、端末内のデータの保存期間を秒で指定する。デフォルト値は30日か、SDKの初期化にて指定された時間が使用される。
+self.<a href="../Classes/APObject.html#//api/name/scopeType">scopeType</a>                  = APScopeGroup; // データを参照・編集できる範囲を指定する。デフォルト値はデータ作成者のグループ(APScopeGroup) かSDKの初期化にて指定されたタイプが使用される。
+self.scopeTypeForAutoRefresh    = APScopeGroup; // 端末にあるデータの自動更新対象の権限範囲を指定する。デフォルト値はデータの権限（_<a href="../Classes/APObject.html#//api/name/scopeType">scopeType</a>)が使用される。
+self.<a href="../Classes/APObject.html#//api/name/isUsingLockForUpdate">isUsingLockForUpdate</a>       = NO;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">APObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 NC Design &amp; Consulting Co., Ltd.. All rights reserved. (Last updated: 2014-02-23)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
