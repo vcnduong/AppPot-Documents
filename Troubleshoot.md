@@ -117,17 +117,3 @@ AppPotのデータベースには自動的にオブジェクトIDにインデッ
 
     mysql> ALTER TABLE CaseReport ADD INDEX (groupIds, createUserId)
 
-
-## マスターデータのロード
-
-アプリの中でマスターデータを登録
-
-# 既存のシステムとの連携
-
-## システム間連携がなぜ必要なのか。
-
-
-
-
-
-
