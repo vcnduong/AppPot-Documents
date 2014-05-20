@@ -5,7 +5,7 @@ Documents for AppPot
 
 NCデザイン＆コンサルティング株式会社で開発・提供するAppPotに関する情報を公開しています。
 
-最初は「Getting Started AppPot.md」から読んで下さい。
+最初は「[Getting Started AppPot.md](./Getting Started AppPot.md)」から読んで下さい。
 
 
 * AppPotの製品サイト
