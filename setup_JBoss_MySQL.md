@@ -1,3 +1,6 @@
+このページはJBoss、MySQLの組み合わせでミドルウェアのセットアップを行う際の手順をサンプルで記載しています。
+実際に行う際は、各製品のドキュメントに従って実施してください。
+
 ## Java
 
     [root@www3225ug work]# yum install jdk-7u40-linux-x64.rpm
@@ -101,3 +104,92 @@
     =========================================================================
     
 
+### MySQL
+
+            
+        [root@www3225ug ~]# wget -q http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-client-5.6.14-1.el6.x86_64.rpm/from/http://cdn.mysql.com/ http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-shared-compat-5.6.14-1.el6.x86_64.rpm/from/http://cdn.mysql.com/ http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-server-5.6.14-1.el6.x86_64.rpm/from/http://cdn.mysql.com/ http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-devel-5.6.14-1.el6.x86_64.rpm/from/http://cdn.mysql.com/ http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-shared-5.6.14-1.el6.x86_64.rpm/from/http://cdn.mysql.com/
+        [root@www3225ug work]# ls
+        MySQL-client-5.6.14-1.el6.x86_64.rpm  MySQL-server-5.6.14-1.el6.x86_64.rpm  MySQL-shared-compat-5.6.14-1.el6.x86_64.rpm
+        MySQL-devel-5.6.14-1.el6.x86_64.rpm   MySQL-shared-5.6.14-1.el6.x86_64.rpm
+        [root@www3225ug work]# yum install MySQL-{client,devel,server,shared-compat}-5.6.14-1.el6.x86_64.rpm
+        Loaded plugins: fastestmirror, security
+        Loading mirror speeds from cached hostfile
+        epel/metalink                                                                                               | 5.4 kB     00:00    
+         * base: ftp.nara.wide.ad.jp
+         * epel: ftp.iij.ad.jp
+         * extras: ftp.nara.wide.ad.jp
+         * updates: ftp.nara.wide.ad.jp
+        
+        （中略）
+        
+        
+        
+        A RANDOM PASSWORD HAS BEEN SET FOR THE MySQL root USER !
+        You will find that password in '/root/.mysql_secret'.
+        
+        You must change that password on your first connect,
+        no other statement but 'SET PASSWORD' will be accepted.
+        See the manual for the semantics of the 'password expired' flag.
+        
+        Also, the account for the anonymous user has been removed.
+        
+        In addition, you can run:
+        
+          /usr/bin/mysql_secure_installation
+        
+        which will also give you the option of removing the test database.
+        This is strongly recommended for production servers.
+        
+        See the manual for more instructions.
+        
+        Please report any problems with the /usr/bin/mysqlbug script!
+        
+        The latest information about MySQL is available on the web at
+        
+          http://www.mysql.com
+        
+        Support MySQL by buying support/licenses at http://shop.mysql.com
+        
+        New default config file was created as /usr/my.cnf and
+        will be used by default by the server when you start it.
+        You may edit this file to change server settings
+        
+        WARNING: Default config file /etc/my.cnf exists on the system
+        This file will be read by default by the MySQL server
+        If you do not want to use this, either remove it, or use the
+        --defaults-file argument to mysqld_safe when starting the server
+        
+        
+        
+        （中略）
+        
+        
+        Installed:
+          MySQL-client.x86_64 0:5.6.14-1.el6              MySQL-devel.x86_64 0:5.6.14-1.el6       MySQL-server.x86_64 0:5.6.14-1.el6     
+          MySQL-shared-compat.x86_64 0:5.6.14-1.el6     
+        
+        Replaced:
+          mysql-libs.x86_64 0:5.1.67-1.el6_3                                                                                              
+        
+        Complete!
+        [root@www3225ug work]# yum install MySQL-shared-5.6.14-1.el6.x86_64.rpm
+        
+        
+        （中略）
+        
+        Total size: 8.4 M
+        Installed size: 8.4 M
+        Is this ok [y/N]: y
+        Downloading Packages:
+        Running rpm_check_debug
+        Running Transaction Test
+        Transaction Test Succeeded
+        Running Transaction
+          Installing : MySQL-shared-5.6.14-1.el6.x86_64                                                                                1/1
+          Verifying  : MySQL-shared-5.6.14-1.el6.x86_64                                                                                1/1
+        
+        Installed:
+          MySQL-shared.x86_64 0:5.6.14-1.el6                                                                                              
+        
+        Complete!
+        [root@www3225ug work]#
