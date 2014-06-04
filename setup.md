@@ -26,13 +26,13 @@ OSはアプリケーションサーバーや、データベースサーバー製
 3. AppPot用のデータベース作成
 4. AppPotのデプロイ
 
-1. OSのセットアップ
+### 1. OSのセットアップ
 前提となるソフトウェアで記載したミドルウェアがサポートするOSをセットアップします。
 以降の章ではCent OS 6.5を例に記載します。
 
-2. 必要なミドルウェアのセットアップ
+### 2. 必要なミドルウェアのセットアップ
 
-3. AppPot用のデータベース作成
+### 3. AppPot用のデータベース作成
 
 AppPot用のデータベースを作成します。
 AppPotのデータベースは大きく2つあります。
@@ -50,9 +50,20 @@ AppPotが使用するDBには以下の権限が必要です。
 ・
 ・
 
-4. AppPotのデプロイ
-4.1. AppPotの設定ファイルの変更
+### 4. AppPotのデプロイ
+#### 4.1. AppPotの設定ファイルの変更
+
+以下の設定ファイルを必要に応じて変更します。
+
+{AppPot_WAR}/WEB-INF/jboss-web.xml
+{AppPot_WAR}/WEB-INF/classes/log4j.properties
+{AppPot_WAR}/WEB-INF/classes/stew.properties
+{AppPot_WAR}/WEB-INF/classes/META-INF/persistence.xml
+
 4.2. AppPotのデプロイ
+
+
+
 4.3. デプロイ後の設定
 管理画面を使えるようになるまでの手順です。
 例えば、apppot_adminやROLEのセットアップです。
