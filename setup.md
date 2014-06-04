@@ -55,10 +55,12 @@ AppPotが使用するDBには以下の権限が必要です。
 
 以下の設定ファイルを必要に応じて変更します。
 
-{AppPot_WAR}/WEB-INF/jboss-web.xml
-{AppPot_WAR}/WEB-INF/classes/log4j.properties
-{AppPot_WAR}/WEB-INF/classes/stew.properties
-{AppPot_WAR}/WEB-INF/classes/META-INF/persistence.xml
+| 設定ファイル名 | 設定ファイルの場所 | 概要 |
+|:-----------:|"------------:|:------------:|
+| jboss-web.xml|{AppPot_WAR}/WEB-INF/jboss-web.xml|AppPotのJBoss上でのコンテキストルートを指定します|
+| AppPotログ設定ファイル | {AppPot_WAR}/WEB-INF/classes/log4j.properties | ログ出力先を設定します |
+| AppPot設定ファイル | {AppPot_WAR}/WEB-INF/classes/stew.properties | AppPotの各種設定情報を設定します。 |
+| 管理画面DB接続設定ファイル | {AppPot_WAR}/WEB-INF/classes/META-INF/persistence.xml | AppPot管理画面が使用するDB接続の設定を行います |
 
 4.2. AppPotのデプロイ
 
