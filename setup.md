@@ -58,7 +58,7 @@ AppPotが使用するDBユーザーはアプリ用データベースの作成な
 ### 4. AppPotのデプロイ
 #### 4.1. AppPotの設定ファイルの変更
 
-以下の設定ファイルを必要に応じて変更します。
+AppPotのWarファイルを解凍し、環境に合わせて以下の設定ファイルを変更します。
 
 | 設定ファイル名 | 設定ファイルの場所 | 概要 |
 |:-----------|:------------|:------------|
@@ -145,7 +145,6 @@ AppPotの管理画面や、WebAPIを受け付けるURLの一部になるコン�
     #Config for supper admin's password
     root.password = 123456
 
-
 ##### 管理画面DB接続設定ファイル 
 AppPotの管理画面が使用するデータベースへの接続情報を記載します。
 
@@ -166,7 +165,7 @@ AppPotの管理画面が使用するデータベースへの接続情報を記�
         <property name="hibernate.connection.password" value="samplepassword"/>
         <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/apppot124?useUnicode=true&amp;characterEncoding=UTF-8"/>
     
-
+設定変更が完了すれば、再度Warファイルにアーカイブしてください。
 
 
 #### 4.2. AppPotのデプロイ
