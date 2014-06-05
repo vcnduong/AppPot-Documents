@@ -191,7 +191,7 @@ AppPotのWarファイルをセットアップしたJBossの下記の場所に配
 この状態では、一般ユーザーが作成できませんので、次のSQLを実行してRoleテーブルにAdmin、Manager、Userロールを追加します。
 roleId 5以降で、モバイルアプリで使用する任意のロールを追加することが可能です。
 
-    mysql> user {作成したAppPot管理用データベース}
+    mysql> use {作成したAppPot管理用データベース}
     mysql> insert into Role (roleId, description, roleName) values (2, 'Admin', 'Admin'), (3, 'Manager', 'Manager'), (4, 'User', 'User');
     Query OK, 3 rows affected (0.03 sec)
     Records: 3  Duplicates: 0  Warnings: 0
