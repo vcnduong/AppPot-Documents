@@ -87,19 +87,15 @@ AppPotの管理画面や、WebAPIを受け付けるURLの一部になるコン�
 	+ デフォルトの設定（org.apache.log4j.DailyRollingFileAppender）では日次でログファイルがローテーションされます。Log4Jの設定に従って、他のログ出力方式に変更することができます。
 
 
-    # ******** Event log properties **********
     # Define the root logger with appender Stew
     log = .
     log4j.rootLogger = INFO, Stew
     -Dlog4j.configuration=log4j.properties
     log4j.debug = true
-    
     # Define the Stew appender
     log4j.appender.Stew=org.apache.log4j.DailyRollingFileAppender
     log4j.appender.Stew.File=${log}/apppot_114.log
     log4j.appender.Stew.DatePattern='.'yyyy-MM-dd
-    
-    
     # Define the layout for Stew appender
     log4j.appender.Stew.layout=org.apache.log4j.PatternLayout
     log4j.appender.Stew.layout.conversionPattern=[%d{dd/MM/yyyy HH:mm:ss,SSS}]: [%p]: %m%n
@@ -107,6 +103,44 @@ AppPotの管理画面や、WebAPIを受け付けるURLの一部になるコン�
 
 
 ##### AppPot設定ファイル
++ stew.certificate.path
+	+ サーバー証明書
++  stew.url
+	+ AppPotを使用するアプリのためのDBに接続するURL。アプリ用のDBは自動生成され、DBの名前はAppPotの管理用DBの中で管理されます。 
++ stew.username
+	+ AppPotを使用するアプリのためのDBに接続するDBユーザーのアカウント
++ stew.password
+	+ AppPotを使用するアプリのためのDBに接続するDBユーザーのパスワード
++ root.password
+	+ AppPot内のrootユーザーのパスワード。設定を変更してJBossを再起動することで、パスワードが変更されます
+
+設定例
+
+    # To change this template, choose Tools | Templates
+    # and open the template in the editor.    
+    # default token age hour
+    stew.default.token.age = 300
+    stew.numberOfPushNotifyService=1
+    #multiLanguage
+    languageSupports=en_US,ja
+    languageDefault=ja
+    #Apple push notification
+    #Server certificate path  
+    stew.certificate.path =/usr/share/jboss-as-7.1.1.Final/cers/
+    stew.certificate.password =123
+    #Log level ERROR | MONITOR | NONE
+    stew.log.level=ERROR
+    #Config for customer's server
+    stew.url = jdbc:mysql://localhost:3306
+    stew.username = developer00
+    stew.password = samplepassword
+    # Configure WebLogic Data Source for JDBC Connection of Service APIs
+    stew.WebLogic.DataSourceName=JDBC_Data_Source_MSSQL
+    #Config for web root
+    stew.webroot = stewsprint8
+    stew.Database_SQLServer_Mode =false
+    #Config for supper admin's password
+    root.password = 123456
 
 
 ##### 管理画面DB接続設定ファイル 
