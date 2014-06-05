@@ -86,6 +86,7 @@ AppPotの管理画面や、WebAPIを受け付けるURLの一部になるコン�
 + log4j.appender.Stew
 	+ デフォルトの設定（org.apache.log4j.DailyRollingFileAppender）では日次でログファイルがローテーションされます。Log4Jの設定に従って、他のログ出力方式に変更することができます。
 
+設定例
 
     # Define the root logger with appender Stew
     log = .
