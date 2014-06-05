@@ -175,11 +175,9 @@ AppPotのWarファイルをセットアップしたJBossの下記の場所に配
 
 
 #### 4.3. デプロイ後の設定
-
 #### Roleテーブルへロールの追加
 
-Role
-初期状態のRoleテーブル
+デプロイ後、初期状態のRoleテーブルには初期ユーザーのapppot_adminのロールのみが作成されています。
 
     mysql> select * from Role;
     +--------+-------------+-------------+
@@ -190,20 +188,14 @@ Role
     1 row in set (0.00 sec)
     
 
-RoleテーブルにAdmin、Manager、Userロールを追加します。
+この状態では、一般ユーザーが作成できませんので、次のSQLを実行してRoleテーブルにAdmin、Manager、Userロールを追加します。
 roleId 5以降で、モバイルアプリで使用する任意のロールを追加することが可能です。
 
-    mysql> insert into Role
-        -> (roleId, description, roleName)
-        -> values
-        -> (2, Admin, Admin),
-        -> (3, Manager, Manager),
-        -> (4, User, User);
-    ERROR 1054 (42S22): Unknown column 'Admin' in 'field list'
+    mysql> user {作成したAppPot管理用データベース}
     mysql> insert into Role (roleId, description, roleName) values (2, 'Admin', 'Admin'), (3, 'Manager', 'Manager'), (4, 'User', 'User');
     Query OK, 3 rows affected (0.03 sec)
     Records: 3  Duplicates: 0  Warnings: 0
-        
+     
     mysql> select * from Role;
     +--------+-------------+-------------+
     | roleId | description | roleName    |
@@ -214,3 +206,7 @@ roleId 5以降で、モバイルアプリで使用する任意のロールを追
     |      4 | User        | User        |
     +--------+-------------+-------------+
     4 rows in set (0.00 sec)
+
+これでAppPotの設定作業は完了です。
+AppPotの管理画面にアクセスして、アプリやユーザーの登録を行って下さい。
+
