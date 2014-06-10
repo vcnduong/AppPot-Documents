@@ -9,4 +9,5 @@ Object Idの次の命名ルールでAppPotサーバーにて採番されます�
 レコード生成日時はUNIX TIMEのフォーマットでミリ秒まで。
 
 + 例えば「ItemImage_1399017463166」というobject idは次のような意味です。
+
 ItemImageというValue Objectの2014/5/02 16:57:43.166に生成されたデータ
