@@ -998,30 +998,41 @@ result      | 認証したユーザ情報(ユーザトークンが含まれる)
 
 
 ## エラーコード一覧
-コード  | メッセージ | 発生元
------- | --------- | -----
-コード1 | インプットパラメータが必要です。 | Authentication
-コード1 | ユーザが存在しません。 トークンが存在しているケースのレスポンスですが、それがユーザトークンではありません(これは匿名トークンでありえます)。 | Authentication
-コード1 | ユーザ名、またはパスワードが不正です。- ユーザ名/パスワードのペアが存在していないケースのレスポンスです。 | Authentication
-コード1 | AppIDとUserIDが合致しません。 | 全般
-コード1 | トークンが存在しません – データベースにトークンが存在しないケースのレスポンスです。 | 全般
-コード1 | トークンの有効期限が切れています。 | 全般
-コード1 | ログインする前にあなたのデバイスを登録してください。 | Authentication
-コード1 | アプリID、またはアプリバージョンが不正です。 | 全般
-コード1 | 削除処理のユーザーセッション中に問題が発生しました。 | DeleteData
-コード1 | そのデバイスはこのデバイスとアプリのために既に登録済みです。 | DeviceRegistration
-コード1 | デバイス登録中に問題が発生しました。 | DeviceRegistration
-コード1 | そのIDが付けられたアプリは存在しません。 | 全般
-コード1 | アプリを作成する事が出来ませんでした。 | CreateaAppData
-コード1 | 入力したデータは無効です。 | AddNewData
-コード1 | テーブルが存在しません。 | AddNewData/UpdateData/DeleteData/GetData
-コード1 | 要求したテーブルが空か、または存在しません。| AddNewData/UpdateData/DeleteData/GetData
-コード1 | データをポストする事ができません。 | 全般
-コード1 | アプリデータベースが定義されていません。 | AddNewData/UpdateData/DeleteData/GetData
-コード1 | プロセスエラー | 全般
-コード1 | アプリはユーザが所属するグループに割当られていません。 | 全般
-コード1 | レコードは存在していないか、データがブロックされています。 | UpdateData/DeleteData
-コード1 | ユーザ情報と認証トークンが合致しません。 | 全般
-コード1 | デバイスUDIDと認証トークンが合致しません。 | 全般
-コード1 | AppID、アプリバージョンと認証トークンが合致しません。 | 全般
-  
+コード | メッセージ                                                    | 発生元
+----- | ------------------------------------------------------------ | -----
+101   | The App with id given does not exist.                        | 全般
+102   | App database not defined.                                    | AddNewData/UpdateData/DeleteData/GetData
+103   | Cannot create app database                                   | CreateaAppData
+104   | Not match between appId, appVersion and authentication token | 全般
+105   | App does not exist.                                          | Gateway
+106   | The App id or app version is not correct.                    | 全般
+107   | The app not assign for groups user belong to.                | 全般
+108   | AppID and UserID do not match                                | 全般
+109   | Input data is not valid.                                     | AddNewData
+110   | User does not exist                                          | Authentication
+111   | User name or password is not correct                         | Authentication
+112   | Not match between user infomation and authentication token   | 全般
+120   | The token is expired.                                        | 全般
+121   | Token does not exist.                                        | 全般
+130   | Record does not exist or data blocking                       | UpdateData/DeleteData
+131   | Process error.                                               | 全般
+160   | Not match between deviceUDID and authentication token        | 全般
+161   | The device already registered for this device and app.       | DeviceRegistration
+162   | The device token already registered by another device.       | (使われていない)
+163   | Please register you device before login.                     | Authentication
+198   | Input parameters are required                                | Authentication
+199   | Request not found.                                           | 全般
+201   | Problem occurs during saving user session.                   | Login/GetAnonymousToken
+202   | Cannot connect to app database                               | DeleteData
+205   | Problem occurs during deletion user session.                 | DeleteData
+206   | Problem occurs during saving device register.                | DeviceRegistration
+210   | Problem occurred when saving transaction                     | AddNewData/UpdateData/DeleteData
+211   | Transaction Id existed                                       | AddNewData/UpdateData/DeleteData
+212   | Problem occurred when getting record                         | AddNewData/UpdateData/DeleteData/GetData
+220   | Cannot excute query                                          | DeleteData
+990   | This table does not change.                                  | GetDataForTable/GetAllDataForTable
+991   | Cannot get table tracking change of records.                 | (使われていない)
+992   | Data does not exist with that token.                         | getTableNameForSync
+993   | Requested table is empty or does not exist.                  | AddNewData/UpdateData/DeleteData/GetData
+994   | Cannot post data                                             | 全般
+995   | Table does not exist                                         | AddNewData/UpdateData/DeleteData/GetData
