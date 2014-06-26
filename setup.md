@@ -8,7 +8,7 @@ AppPotは複数のJavaアプリケーションサーバー、リレーショナ�
 
 ### アプリケーションサーバー
 
-+ Redhat JBoss AS 7.1
++ Red Hat JBoss AS 7.1
 + Oracle WebLogic Server 12c
 
 ### データベースサーバー
@@ -30,27 +30,28 @@ AppPotのセットアップは次の手順で行います。
 4. AppPotのデプロイ
 
 ### 1. OSのセットアップ
-前提となるソフトウェアで記載したミドルウェアがサポートするOSをセットアップします。
+前提となるソフトウェアで記載したミドルウェアがサポートするOSをセットアップします。  
 以降の章ではCent OS 6.5を例に記載します。
 
 ### 2. 必要なミドルウェアのセットアップ
-各ミドルウェアのマニュアルに従ってセットアップを行って下さい。
+各ミドルウェアのマニュアルに従ってセットアップを行って下さい。  
+データベースを作成する際の文字コードはUTF-8にする必要があります。  
 参考情報として、JBoss、MySQLの組み合わせでのセットアップの情報は[こちら](./setup_JBoss_MySQL.md)を参照してください。
-
 
 ### 3. AppPot用のデータベース作成
 
-AppPot用のデータベースを作成します。
+AppPot用のデータベースを作成します。  
 AppPotのデータベースは大きく2つあります。
 
-+ AppPot管理用データベース
-　AppPotの管理画面で使用されるデータベースです。
-　ユーザー、グループ、アプリなどの情報が管理されています。
-　データベースは任意の名前で作成してください。データベース内のテーブルはAppPotの起動時に自動で生成されます。
++ AppPot管理用データベース  
+    AppPotの管理画面で使用されるデータベースです。  
+    ユーザー、グループ、アプリなどの情報が管理されています。  
+    データベースは任意の名前で作成してください。  
+    データベース内のテーブルはAppPotの起動時に自動で生成されます。
 
-+ アプリ用データベース
-　アプリごとに、アプリのValue Objectに合わせて生成されるデータベースです。
-　アプリからAPI（CreateAppDB）が呼び出されたときに生成されます。
++ アプリ用データベース  
+    アプリごとに、アプリのValue Objectに合わせて生成されるデータベースです。  
+    アプリからAPI（CreateAppDB）が呼び出されたときに生成されます。
 
 AppPotが使用するDBユーザーはアプリ用データベースの作成などを行いますので、グローバルレベルでALLの権限を付与してください。
 
@@ -83,10 +84,12 @@ AppPotの管理画面や、WebAPIを受け付けるURLの一部になるコン�
 
 
 ##### AppPotログ設定ファイル
-+ log
-	+ ログの出力先ディレクトを指定してください。カレント(.)を指定した場合は、JBossの実行ユーザーのホームディレクトリにログファイルが出力されます
-+ log4j.appender.Stew
-	+ デフォルトの設定（org.apache.log4j.DailyRollingFileAppender）では日次でログファイルがローテーションされます。Log4Jの設定に従って、他のログ出力方式に変更することができます。
++ log  
+    ログの出力先ディレクトを指定してください。  
+    カレント(.)を指定した場合は、JBossの実行ユーザーのホームディレクトリにログファイルが出力されます。  
++ log4j.appender.Stew  
+	デフォルトの設定（org.apache.log4j.DailyRollingFileAppender）では日次でログファイルがローテーションされます。  
+    Log4Jの設定に従って、他のログ出力方式に変更することができます。
 
 設定例
 
@@ -106,16 +109,18 @@ AppPotの管理画面や、WebAPIを受け付けるURLの一部になるコン�
 
 
 ##### AppPot設定ファイル
-+ stew.certificate.path
-	+ サーバー証明書
-+  stew.url
-	+ AppPotを使用するアプリのためのDBに接続するURL。アプリ用のDBは自動生成され、DBの名前はAppPotの管理用DBの中で管理されます。 
-+ stew.username
-	+ AppPotを使用するアプリのためのDBに接続するDBユーザーのアカウント
-+ stew.password
-	+ AppPotを使用するアプリのためのDBに接続するDBユーザーのパスワード
-+ root.password
-	+ AppPot内のrootユーザーのパスワード。設定を変更してJBossを再起動することで、パスワードが変更されます
++ stew.certificate.path  
+	サーバー証明書
++  stew.url    
+	AppPotを使用するアプリのためのDBに接続するURL。  
+    アプリ用のDBは自動生成され、DBの名前はAppPotの管理用DBの中で管理されます。 
++ stew.username  
+	AppPotを使用するアプリのためのDBに接続するDBユーザーのアカウント。
++ stew.password  
+	AppPotを使用するアプリのためのDBに接続するDBユーザーのパスワード。
++ root.password  
+	AppPot内のrootユーザーのパスワード。
+    設定を変更してJBossを再起動することで、パスワードが変更されます。
 
 設定例
 
@@ -150,17 +155,20 @@ AppPotの管理画面が使用するデータベースへの接続情報を記�
 
 変更するのは下記です。
 
-+ hibernate.connection.username
-	+ データベースへの接続ユーザー名
-+ hibernate.connection.password
-	+ データベースへの接続ユーザーのパスワード
-+ hibernate.connection.url
-	+ 接続URL
++ hibernate.connection.driver_class  
+    JDBCドライバのクラス名
++ hibernate.connection.username  
+	データベースへの接続ユーザー名
++ hibernate.connection.password  
+	データベースへの接続ユーザーのパスワード
++ hibernate.connection.url  
+	接続URL  
 	「3. AppPot用のデータベース作成」で作成したデータベースを使用します。
 
 
 設定例
 
+        <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
         <property name="hibernate.connection.username" value="developer00"/>
         <property name="hibernate.connection.password" value="samplepassword"/>
         <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/apppot124?useUnicode=true&amp;characterEncoding=UTF-8"/>
